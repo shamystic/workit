@@ -1,0 +1,38 @@
+.contain{
+  border: 1px solid #00009c;
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 0.3rem;
+  font-family: Oswald;
+  font-size: 1.7rem;
+}
+#sign{
+  border-bottom: 0.1rem dashed #00009c;
+}
+.textbox{
+  padding: 0.2rem;
+  
+}
+.text{
+  font-family: arial;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  padding: 0.2rem;
+}
+.button{
+  margin: 0 auto;
+  vertical-align: middle;
+}
+.submit{
+  width: 15%;
+  margin: 0 auto;
+  font-family: Arial;
+  font-size: 0.8rem;
+  cursor: pointer;
+   border: 0.1rem solid #afafaf;
+}
+.newuser{
+  font-size: 1rem;
+}

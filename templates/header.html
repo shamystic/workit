@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/header.css') }}">
+  </head>
+    <div class = "clearfix">
+      <!-- link to home page-->
+    <div id = "leftbox">
+      <a href class = "headlink"> Home </a>
+      </div>
+
+    <div id = "centbox">workit</div> 
+ 
+      <!-- link to sign in page-->
+    <div id = "rightbox">
+      <a href class = "headlink">
+      Sign In/Register</a></div>
+      <br style="clear: left;" />
+    </div>
+
+  {% block content %}{% endblock %}
+</html>

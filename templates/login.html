@@ -1,0 +1,31 @@
+<DOCTYPE html>
+<html>
+{% extends "header.html" %}
+{% block content %} 
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}"></head>
+  <form>
+  <div class = "contain">
+    <div id = "sign">
+    Sign In
+    </div>
+    Username:
+    <br>
+    <div class = "textbox">
+    <input type = "text" class  = "text">
+    </div>
+   
+    Password:
+    <br>
+    <div class = "textbox">
+    <input type = "password" class = "text">
+    </div>
+    <div class = "button">
+      <input type = "submit" value = "Sign in" class = "submit"><br></div>
+      <div class = "newuser">
+    Dont have an account? Register <a href> here</a>.
+  </div>
+  </div>
+  {% endblock %}
+  </html>

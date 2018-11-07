@@ -1,0 +1,58 @@
+.container{
+  border : 2px solid #00009c;
+  border-radius: 12px;
+/*   border-style: outset; */
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: Montserrat;
+}
+.selection{
+  width: 33%;
+/*   text-align: left; */
+}
+#left{
+float:left;
+}
+#center{
+  margin: auto;
+}
+#right{
+  float:right;
+}
+.test{
+  text-align: left;
+  padding-left: 28%;
+}
+.submit{
+/*   font-size: 1px; */
+/*    display: block; */
+  width: 15%;
+  padding: 0.1rem;
+   margin: 0 auto;
+  border: 0.1rem solid #00009c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  
+}
+.submit:hover{
+  color:white;
+  background-color: #00009c;
+}
+.bottom{
+/*    background: chocolate; */
+/*    display: table-cell; */
+   vertical-align: middle;
+  margin: 0 auto;
+/*   width: 100rem; */
+/*   height: 20%; */
+  padding-top: 3%;
+  padding-bottom: 1%;
+}
+
+#blurb { color: black; 
+   font-family: Montserrat;
+   text-align: center; 
+   font-size: 20px;
+
+}
