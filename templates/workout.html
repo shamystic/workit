@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+{% extends "header.html" %}
+{% block content %}
     <head>
-        {% extends "header.html" %}
     </head>
     <body>
-        {% for item in equipment %}
+        {% for item in workouts %}
             <p>{{item.name}}</p>
         {% endfor %}
     </body>
+{% endblock %}
 </html>
