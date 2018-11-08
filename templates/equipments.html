@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        {% extends "header.html" %}
+    </head>
+    <body>
+        {% for item in equipment %}
+            <p>{{item.name}}</p>
+        {% endfor %}
+    </body>
+</html>

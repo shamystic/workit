@@ -4,11 +4,13 @@ import models
 from add_equipment import equipment
 from get_workouts import workouts
 
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 
-@app.route('/', methods = ['GET'])
+
+@app.route('/', methods=['GET'])
 def index():
     return render_template('main.html')
 
