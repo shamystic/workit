@@ -8,8 +8,7 @@ from flask_login import LoginManager, login_required, login_user, logout_user, c
 # do current_user.email to get current email
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-app.config['SECRET_KEY'] = 'secrethehe'
+app.config.from_object('config')
 db = SQLAlchemy(app)
 from models import *
 
