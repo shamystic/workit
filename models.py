@@ -1,4 +1,4 @@
-from __main__ import db 
+from app import db
 
 class User(db.Model):
     email = db.Column(db.String(120), primary_key = True, nullable=False)
@@ -26,12 +26,12 @@ class Fitness_Class(db.Model):
 # class ownsWorkout(db.Model):
 #     email = db.Column(db.String(120), db.ForeignKey(User.email))
 #     circuit_id = db.Column(db.Integer, db.ForeignKey(Workout_Circuit.circuit_id))
-
+#
 # class hasFavoriteClass(db.Model):
 #     email = db.Column(db.String(120), db.ForeignKey(User.email))
 #     class_name = db.Column(db.String(120), db.ForeignKey(Fitness_Class.name))
 #     class_location = db.Column(db.String(120), db.ForeignKey(Fitness_Class.location))
-
+#
 # class hasExercise(db.Model):
 #     circuit_id = db.Column(db.Integer, db.ForeignKey(Workout_Circuit.circuit_id))
 #     exercise_name = db.Column(db.String(120), db.ForeignKey(Exercise.name))

@@ -9,7 +9,7 @@ headers = {'Accept': 'application/json',
 
 response = requests.get(url, headers = headers)
 json_data = json.loads(response.text)
-pprint (json_data)
+# pprint (json_data)
 
 equipment = [x['name'] for x in json_data['results']]
-print (equipment)
+# print (equipment)

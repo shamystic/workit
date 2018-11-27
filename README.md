@@ -14,5 +14,5 @@ Workout application
 >>> User.query.filter_by(username = 'Shamikh')
 ```
 
-Relationships in SQLAlchemy: 
+Relationships in SQLAlchemy:
 1. https://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html
