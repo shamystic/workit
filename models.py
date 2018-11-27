@@ -8,6 +8,18 @@ class User(db.Model):
     def __repr__(self):
         return f"User '{self.name}', '{self.email}'"
 
+    def is_authenticated(self):
+        return True
+
+    def is_active(self):
+        return True
+
+    def get_id(self):
+        return self.email
+
+    def is_anonymous(self):
+        return False
+
 class Equipment(db.Model):
     name = db.Column(db.String(120), primary_key = True)
 

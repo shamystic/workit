@@ -2,14 +2,28 @@ from flask import Flask, request, render_template, url_for, session, redirect, j
 from flask_sqlalchemy import SQLAlchemy
 from add_equipment import equipment
 from get_workouts import workouts
+from flask_login import LoginManager, login_required, login_user, logout_user, current_user
+
+# do current_user to get logged in user
+# do current_user.email to get current email
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config['SECRET_KEY'] = 'secrethehe'
 db = SQLAlchemy(app)
 from models import *
 
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
+
 @app.route('/', methods=['GET'])
 def index():
+    print(current_user)
     return render_template('main.html')
 
 @app.route('/equipment', methods = ['GET'])
@@ -20,9 +34,36 @@ def show_equipment():
 def show_workouts():
 	return render_template('workout.html', workouts = Exercise.query.all())
 
-@app.route('/login', methods = ['GET'])
+@app.route('/login', methods = ['GET', 'POST'])
 def login():
-	return render_template('login.html')
+    if request.method == 'GET':
+        return render_template('login.html')
+    email = request.form['email']
+    password = request.form['password']
+    user = User.query.filter_by(email = email, password = password).first()
+    if user is None:
+        return redirect(url_for('login'))
+    login_user(user)
+    print('Logged in successfully')
+    return redirect(url_for('index'))
+
+@app.route('/register', methods = ['GET', 'POST'])
+def register():
+    if request.method == 'GET':
+        return render_template('register.html')
+    print(request.form['email'])
+    print(request.form['name'])
+    print(request.form['password'])
+    user = User(email = request.form['email'], name = request.form['name'], password = request.form['password'])
+    db.session.add(user)
+    db.session.commit()
+    print('User successfully registered!')
+    return redirect(url_for('login'))
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
