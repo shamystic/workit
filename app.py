@@ -2,11 +2,11 @@ from flask import Flask, request, render_template, url_for, session, redirect, j
 from flask_sqlalchemy import SQLAlchemy
 from add_equipment import equipment
 from get_workouts import workouts
+from models import *
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config.from_object('config')
 db = SQLAlchemy(app)
-from models import *
 
 @app.route('/', methods=['GET'])
 def index():
