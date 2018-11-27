@@ -1,69 +1,68 @@
 <DOCTYPE html>
-<html>
-<!-- for implementation in flask app -->
+	<html>
+	{% extends "header.html" %}
+	{% block content %}
+	<head>
+		<title>Home</title>
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/main.css') }}">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
+	</head>
+	<h1 style = "text-align: center;font-family: Oswald;"> Find a Workout Tailored for You </h1>
+	<p id = "blurb">College students need weekly aerobic exercise, but it can be hard to figure out and follow through on workout plans with your busy schedule. </p>
+	<p id = "blurb">Workit streamlines your fitness experience by providing you expert-recommended, customized workouts based on your resources and needs. </p>
+	<form action="" method="POST" id = "form">
+		<div class =  "container">
+			<div class = "selection" id = "left">
+				<h3>Type of challenge: </h3>
+				<div class = "test">
+					&emsp;
+					<input type = "checkbox" name = "challenge" value = "circuit"> Workout Circuit
+					<br>
+					&emsp;
+					<input type = "checkbox" name = "challenge" value = "class"> Fitness Class
+				</div>
+			</div>
 
-{% extends "header.html" %}
-{% block content %} 
-<head>
-	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/main.css') }}">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet"></head>
-<h1 style = "text-align: center;font-family: Oswald;"> Find a Workout Tailored for You </h1>
-<p id = "blurb">College students need weekly aerobic exercise, but it can be hard to figure out and follow through on workout plans with your busy schedule. <br>
-Workit streamlines your fitness experience by providing you expert-recommended, customized workouts based on your resources and needs. </p>
-<form action="" method="POST" id = "form">
-<div class =  "container">
-<div class = "selection" id = "left">
-<h3>Type of challenge: </h3>  
-  <div class = "test">
-  &emsp;
-<input type = "checkbox" name = "challenge" value = "circuit"> Workout Circuit
-<br>
-  &emsp;
-<input type = "checkbox" name = "challenge" value = "class"> Fitness Class
-</div>
-  </div>
+			<div class = "selection" id = "right">
+				<h3>Equipment Available:</h3>
+				<div class = "test">
+					&emsp;
+					<input type = "checkbox" name = "equipment" value = "body"> None
+					<br>
+					&emsp;
+					<input type = "checkbox" name = "equipment" value = "dumbbels"> Dumbbells
+					<br>
+					&emsp;
+					<input type = "checkbox" name = "equipment" value = "machine"> Machine
+					<br>
+					&emsp;
+					<input type = "checkbox" name = "equipment" value = "cable"> Cable
+				</div>
+			</div>
+			<div class = "selection" id = "center">
+				<h3>Area(s) of focus:</h3>
+				<div class="test">
+					&emsp;
+					<input type = "checkbox" name = "area" value = "upper">
+					Upper Body
+					<br>
 
-<div class = "selection" id = "right">
-<h3>Equipment Available:</h3>
-  <div class = "test">
-&emsp;
-<input type = "checkbox" name = "equipment" value = "body"> None
-<br>
- &emsp;
-<input type = "checkbox" name = "equipment" value = "dumbbels"> Dumbbells
-<br>
-  &emsp;
-<input type = "checkbox" name = "equipment" value = "machine"> Machine
-<br>
-  &emsp;
-<input type = "checkbox" name = "equipment" value = "cable"> Cable
-</div>
-  </div>
-  <div class = "selection" id = "center">
-<h3>Area(s) of focus:</h3>
-<div class="test">
-&emsp;
-<input type = "checkbox" name = "area" value = "upper"> 
-Upper Body
-<br>
- 
-&emsp;
-<input type = "checkbox" name = "area" value = "lower"> Lower Body
-<br>
-    
-&emsp;
-<input type = "checkbox" name = "area" value = "abdominals"> Abdominals
-<br>
-    
-&emsp;
-<input type = "checkbox" name = "area" value = "cardio"> Cardio
-</div>
-</div>
-  <div class = "bottom">
-  <input type = "submit" value = "Submit" class = "submit" >
-</div>
-  </div>
-  </form>
-<!-- comment below when not in flask app-->
-  {% endblock %}
-</html>
+					&emsp;
+					<input type = "checkbox" name = "area" value = "lower"> Lower Body
+					<br>
+
+					&emsp;
+					<input type = "checkbox" name = "area" value = "abdominals"> Abdominals
+					<br>
+
+					&emsp;
+					<input type = "checkbox" name = "area" value = "cardio"> Cardio
+				</div>
+			</div>
+			<div class = "bottom">
+				<input type = "submit" value = "Submit" class = "submit" >
+			</div>
+		</div>
+	</form>
+	{% endblock %}
+	</html>
