@@ -4,9 +4,9 @@
 {% block content %}
 <head></head>
 <body>
-	<h1>Equipment</h1>
-    {% for item in equipment %}
-    <p>{{item.name}}</p>
+	<h1>Users</h1>
+    {% for item in users %}
+    <p>{{item.id}}, {{item.name}}, {{item.email}} , {{item.goal}}  </p>
     {% endfor %}
 </body>
 {% endblock %}

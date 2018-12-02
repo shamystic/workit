@@ -11,6 +11,20 @@ db.session.add(user_1)
 db.session.commit()
 User.query.all()
 User.query.filter_by(username = 'Shamikh')
+
+
+```
+
+
+
+
+```
+dropdb dfx; createdb dfx; psql dfx -af create.sql
+psql dfx -af load.sql
+psql dfx
+
+\d           # Views relations 
+select * from <table_name> 
 ```
 
 Relationships in SQLAlchemy: 

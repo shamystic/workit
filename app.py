@@ -33,13 +33,17 @@ def show_equipment():
 def show_workouts():
 	return render_template('workout.html', workouts = Exercise.query.all())
 
+@app.route('/users', methods = ['GET'])
+def show_users():
+    return render_template('users.html', users = Person.query.all())    
+
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     if request.method == 'GET':
         return render_template('login.html')
     email = request.form['email']
     password = request.form['password']
-    user = User.query.filter_by(email = email, password = password).first()
+    user = Person.query.filter_by(email = email, password = password).first()
     if user is None:
         return redirect(url_for('login'))
     login_user(user)
@@ -53,7 +57,7 @@ def register():
     print(request.form['email'])
     print(request.form['name'])
     print(request.form['password'])
-    user = User(email = request.form['email'], name = request.form['name'], password = request.form['password'])
+    user = Person(email = request.form['email'], name = request.form['name'], password = request.form['password'])
     db.session.add(user)
     db.session.commit()
     print('User successfully registered!')
