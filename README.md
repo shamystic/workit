@@ -2,6 +2,22 @@ Workout application
 
 
 ```
+# Switch to 'postgres' user to interact with database
+sudo -i -u postgres
+# Recreate the database using create.sql
+dropdb dfx; createdb dfx; psql dfx -af create.sql
+# Load data from load.sql
+psql dfx -af load.sql
+# View/test the data
+psql dfx
+\d           # Views relations 
+select * from <table_name> 
+```
+
+
+
+
+```
 # Python interpreter
 from app import db
 db.create_all()
@@ -11,21 +27,11 @@ db.session.add(user_1)
 db.session.commit()
 User.query.all()
 User.query.filter_by(username = 'Shamikh')
-
-
 ```
 
 
 
 
-```
-dropdb dfx; createdb dfx; psql dfx -af create.sql
-psql dfx -af load.sql
-psql dfx
-
-\d           # Views relations 
-select * from <table_name> 
-```
 
 Relationships in SQLAlchemy: 
 1. https://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html
