@@ -18,7 +18,7 @@ login_manager.login_view = 'login'
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(user_id)
+    return Person.query.get(user_id)
 
 @app.route('/', methods=['GET'])
 def index():
@@ -35,7 +35,7 @@ def show_workouts():
 
 @app.route('/users', methods = ['GET'])
 def show_users():
-    return render_template('users.html', users = Person.query.all())    
+    return render_template('users.html', users = Person.query.all())
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():

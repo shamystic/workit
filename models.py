@@ -3,8 +3,8 @@ from app import db
 
 class Person(db.Model):
     # __tablename__ = 'users'
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(120), nullable=False)
+    # id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(120), primary_key=True)
     name = db.Column(db.String(120))
     password = db.Column(db.String(120))
     goal = db.Column(db.String(120), nullable = True)
@@ -36,7 +36,7 @@ class Exercise(db.Model):
     # __tablename__ = 'exercises'
     name = db.Column(db.String(120), primary_key = True)
     body_part = db.Column(db.String(120))
-    
+
     def __repr__(self):
         return "Exercise Name: {}".format(self.name)
 
