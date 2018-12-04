@@ -1,0 +1,258 @@
+﻿Name,Type,Equipment
+Rope Jumping,Cardio,Other
+Step Mill,Cardio,Machine
+Bicycling,Cardio,Other
+"Rowing, Stationary",Cardio,Machine
+Elliptical Trainer,Cardio,Machine
+Stairmaster,Cardio,Machine
+Burpee,Cardio,BodyOnly
+Trail Running/Walking,Cardio,None
+Skating,Cardio,Other
+Jog In Place,Cardio,BodyOnly
+"Running, Treadmill",Cardio,Machine
+"Bicycling, Stationary",Cardio,Machine
+Jogging-Treadmill,Cardio,Machine
+Recumbent Bike,Cardio,Machine
+"Walking, Treadmill",Cardio,Machine
+Dumbbell Bench Press,Chest,Dumbbell
+Pushups,Chest,BodyOnly
+Dumbbell Flyes,Chest,Dumbbell
+Incline Dumbbell Press,Chest,Dumbbell
+Low Cable Crossover,Chest,Cable
+Decline Dumbbell Flyes,Chest,Dumbbell
+Dips - Chest Version,Chest,Other
+Barbell Bench Press - Medium Grip,Chest,Barbell
+Bodyweight Flyes,Chest,E-ZCurlBar
+Incline Cable Flye,Chest,Cable
+Wide-Grip Decline Barbell Bench Press,Chest,Barbell
+Incline Dumbbell Press Reverse-Grip,Chest,Dumbbell
+Wide-Grip Barbell Bench Press,Chest,Barbell
+Decline Barbell Bench Press,Chest,Barbell
+Incline Push-Up,Chest,BodyOnly
+Rickshaw Carry,Forearms,Other
+Wrist Rotations with Straight Bar,Forearms,Barbell
+Palms-Down Wrist Curl Over A Bench,Forearms,Barbell
+Palms-Up Barbell Wrist Curl Over A Bench,Forearms,Barbell
+Farmer's Walk,Forearms,Other
+Standing Palms-Up Barbell Behind The Back Wrist Curl,Forearms,Barbell
+Finger Curls,Forearms,Barbell
+Seated Two-Arm Palms-Up Low-Pulley Wrist Curl,Forearms,Cable
+Wrist Roller,Forearms,Other
+Seated One-Arm Dumbbell Palms-Up Wrist Curl,Forearms,Dumbbell
+Seated Palms-Down Barbell Wrist Curl,Forearms,Barbell
+Dumbbell Lying Supination,Forearms,Dumbbell
+Dumbbell Lying Pronation,Forearms,Dumbbell
+Seated Palm-Up Barbell Wrist Curl,Forearms,Barbell
+Palms-Up Dumbbell Wrist Curl Over A Bench,Forearms,Dumbbell
+Weighted Pull Ups,Lats,Other
+Pullups,Lats,BodyOnly
+Chin-Up,Lats,BodyOnly
+Rocky Pull-Ups/Pulldowns,Lats,Other
+V-Bar Pulldown,Lats,Cable
+Muscle Up,Lats,Other
+Shotgun Row,Lats,Cable
+Wide-Grip Pull-Up,Lats,BodyOnly
+Close-Grip Front Lat Pulldown,Lats,Cable
+V-Bar Pullup,Lats,BodyOnly
+Wide-Grip Rear Pull-Up,Lats,BodyOnly
+Rope Straight-Arm Pulldown,Lats,Cable
+Rope Climb,Lats,Other
+Wide-Grip Lat Pulldown,Lats,Cable
+Underhand Cable Pulldowns,Lats,Cable
+T-Bar Row with Handle,MiddleBack,Barbell
+Reverse Grip Bent-Over Rows,MiddleBack,Barbell
+One-Arm Long Bar Row,MiddleBack,Barbell
+One-Arm Dumbbell Row,MiddleBack,Dumbbell
+Bent Over One-Arm Long Bar Row,MiddleBack,Barbell
+T-Bar Row,MiddleBack,Barbell
+Bent Over Two-Arm Long Bar Row,MiddleBack,Barbell
+Dumbbell Incline Row,MiddleBack,Dumbbell
+Bodyweight Mid Row,MiddleBack,Other
+Bent Over Two-Dumbbell Row With Palms In,MiddleBack,Dumbbell
+Seated Cable Rows,MiddleBack,Cable
+Bent Over Barbell Row,MiddleBack,Barbell
+Alternating Renegade Row,MiddleBack,Kettlebells
+Seated One-arm Cable Pulley Rows,MiddleBack,Cable
+Man Maker,MiddleBack,Dumbbell
+Atlas Stones,LowerBack,Other
+Deficit Deadlift,LowerBack,Barbell
+Axle Deadlift,LowerBack,Other
+Hyperextensions (Back Extensions),LowerBack,Other
+Hyperextensions With No Hyperextension Bench,LowerBack,BodyOnly
+Deadlift with Bands,LowerBack,Barbell
+Deadlift with Chains,LowerBack,Barbell
+Rack Pull with Bands,LowerBack,Barbell
+Rack Pulls,LowerBack,Barbell
+Superman,LowerBack,BodyOnly
+Weighted Ball Hyperextension,LowerBack,ExerciseBall
+Seated Back Extension,LowerBack,Machine
+Stiff Leg Barbell Good Morning,LowerBack,Barbell
+Seated Good Mornings,LowerBack,Barbell
+Atlas Stone Trainer,LowerBack,Other
+Lying Face Down Plate Neck Resistance,Neck,Other
+Lying Face Up Plate Neck Resistance,Neck,Other
+Seated Head Harness Neck Resistance,Neck,Other
+Isometric Neck Exercise - Sides,Neck,BodyOnly
+Isometric Neck Exercise - Front And Back,Neck,BodyOnly
+Neck Bridge Prone,Neck,BodyOnly
+Side Neck Stretch,Neck,None
+Chin To Chest Stretch,Neck,None
+Neck-SMR,Neck,Other
+Single-Leg Press,Quadriceps,Machine
+Clean from Blocks,Quadriceps,Barbell
+Barbell Full Squat,Quadriceps,Barbell
+Tire Flip,Quadriceps,Other
+Snatch,Quadriceps,Barbell
+Hang Clean,Quadriceps,Barbell
+Box Squat,Quadriceps,Barbell
+Reverse Band Box Squat,Quadriceps,Barbell
+Front Squats With Two Kettlebells,Quadriceps,Kettlebells
+Single Leg Push-off,Quadriceps,Other
+Barbell Walking Lunge,Quadriceps,Barbell
+Olympic Squat,Quadriceps,Barbell
+Kettlebell Pistol Squat,Quadriceps,Kettlebells
+Romanian Deadlift With Dumbbells,Hamstrings,Dumbbell
+Clean Deadlift,Hamstrings,Barbell
+Barbell Deadlift,Hamstrings,Barbell
+Sumo Deadlift,Hamstrings,Barbell
+Power Snatch,Hamstrings,Barbell
+Romanian Deadlift from Deficit,Hamstrings,Barbell
+Power Clean from Blocks,Hamstrings,Barbell
+Floor Glute-Ham Raise,Hamstrings,None
+Natural Glute Ham Raise,Hamstrings,BodyOnly
+Lying Leg Curls,Hamstrings,Machine
+Snatch Deadlift,Hamstrings,Barbell
+Ball Leg Curl,Hamstrings,ExerciseBall
+Stiff-Legged Dumbbell Deadlift,Hamstrings,Dumbbell
+Power Clean,Hamstrings,Barbell
+Hang Snatch,Hamstrings,Barbell
+Smith Machine Calf Raise,Calves,Machine
+Standing Calf Raises,Calves,Machine
+Standing Dumbbell Calf Raise,Calves,Dumbbell
+Seated Calf Raise,Calves,Machine
+Rocking Standing Calf Raise,Calves,Barbell
+Calf Press On The Leg Press Machine,Calves,Machine
+Calf Press,Calves,Machine
+Standing Barbell Calf Raise,Calves,Barbell
+Barbell Seated Calf Raise,Calves,Barbell
+Balance Board,Calves,Other
+Donkey Calf Raises,Calves,Other
+Smith Machine Reverse Calf Raises,Calves,Machine
+Dumbbell Seated One-Leg Calf Raise,Calves,Dumbbell
+Ankle Circles,Calves,None
+Peroneals-SMR,Calves,FoamRoll
+Dips - Triceps Version,Triceps,BodyOnly
+Decline EZ Bar Triceps Extension,Triceps,Barbell
+Dumbbell Floor Press,Triceps,Dumbbell
+Close-Grip Barbell Bench Press,Triceps,Barbell
+Triceps Pushdown - V-Bar Attachment,Triceps,Cable
+Weighted Bench Dip,Triceps,Other
+Kneeling Cable Triceps Extension,Triceps,Cable
+Reverse Grip Triceps Pushdown,Triceps,Cable
+Standing Dumbbell Triceps Extension,Triceps,Dumbbell
+Push-Ups - Close Triceps Position,Triceps,BodyOnly
+EZ-Bar Skullcrusher,Triceps,E-ZCurlBar
+Triceps Pushdown - Rope Attachment,Triceps,Cable
+Cable One Arm Tricep Extension,Triceps,Cable
+Decline Close-Grip Bench To Skull Crusher,Triceps,Barbell
+Seated Triceps Press,Triceps,Dumbbell
+Smith Machine Shrug,Traps,Machine
+Leverage Shrug,Traps,Machine
+Standing Dumbbell Upright Row,Traps,Dumbbell
+Kettlebell Sumo High Pull,Traps,Kettlebells
+Dumbbell Shrug,Traps,Dumbbell
+Calf-Machine Shoulder Shrug,Traps,Machine
+Barbell Shrug,Traps,Barbell
+Barbell Shrug Behind The Back,Traps,Barbell
+Upright Cable Row,Traps,Cable
+Cable Shrugs,Traps,Cable
+Upright Row - With Bands,Traps,Bands
+Smith Machine Behind the Back Shrug,Traps,Machine
+Smith Machine Upright Row,Traps,Machine
+Clean Shrug,Traps,Barbell
+Scapular Pull-Up,Traps,None
+Single-Arm Linear Jammer,Shoulders,Barbell
+Side Laterals to Front Raise,Shoulders,Dumbbell
+Standing Palm-In One-Arm Dumbbell Press,Shoulders,Dumbbell
+Clean and Press,Shoulders,Barbell
+Push Press,Shoulders,Barbell
+Clean and Jerk,Shoulders,Barbell
+Standing Palms-In Dumbbell Press,Shoulders,Dumbbell
+Standing Military Press,Shoulders,Barbell
+One-Arm Kettlebell Push Press,Shoulders,Kettlebells
+Seated Barbell Military Press,Shoulders,Barbell
+One-Arm Side Laterals,Shoulders,Dumbbell
+Power Partials,Shoulders,Dumbbell
+Seated Dumbbell Press,Shoulders,Dumbbell
+Standing Dumbbell Straight-Arm Front Delt Raise Above Head,Shoulders,Dumbbell
+Reverse Flyes,Shoulders,Dumbbell
+One-Arm Medicine Ball Slam,Abdominals,MedicineBall
+Landmine 180's,Abdominals,Barbell
+Suspended Fallout,Abdominals,Other
+Plank,Abdominals,BodyOnly
+Standing Cable Lift,Abdominals,Cable
+Bottoms Up,Abdominals,BodyOnly
+Spell Caster,Abdominals,Dumbbell
+Dumbbell V-Sit Cross Jab,Abdominals,Dumbbell
+Decline Reverse Crunch,Abdominals,BodyOnly
+Spider Crawl,Abdominals,BodyOnly
+Cross-Body Crunch,Abdominals,BodyOnly
+One-Arm High-Pulley Cable Side Bends,Abdominals,Cable
+Elbow to Knee,Abdominals,BodyOnly
+Cocoons,Abdominals,BodyOnly
+Plate Twist,Abdominals,Other
+Barbell Glute Bridge,Glutes,Barbell
+Barbell Hip Thrust,Glutes,Barbell
+One-Legged Cable Kickback,Glutes,Cable
+Butt Lift (Bridge),Glutes,BodyOnly
+Single Leg Glute Bridge,Glutes,BodyOnly
+Step-up with Knee Raise,Glutes,BodyOnly
+Kneeling Squat,Glutes,Barbell
+Glute Kickback,Glutes,BodyOnly
+Flutter Kicks,Glutes,BodyOnly
+Physioball Hip Bridge,Glutes,ExerciseBall
+Kneeling Jump Squat,Glutes,Barbell
+Pull Through,Glutes,Cable
+Hip Extension with Bands,Glutes,Bands
+Piriformis-SMR,Glutes,FoamRoll
+Leg Lift,Glutes,BodyOnly
+Incline Hammer Curls,Biceps,Dumbbell
+Wide-Grip Standing Barbell Curl,Biceps,Barbell
+Spider Curl,Biceps,E-ZCurlBar
+EZ-Bar Curl,Biceps,E-ZCurlBar
+Hammer Curls,Biceps,Dumbbell
+Zottman Curl,Biceps,Dumbbell
+Biceps Curl To Shoulder Press,Biceps,Dumbbell
+Concentration Curls,Biceps,Dumbbell
+Barbell Curl,Biceps,Barbell
+Overhead Cable Curl,Biceps,Cable
+Flexor Incline Dumbbell Curls,Biceps,Dumbbell
+Machine Bicep Curl,Biceps,Machine
+Dumbbell Bicep Curl,Biceps,Dumbbell
+Cross Body Hammer Curl,Biceps,Dumbbell
+Close-Grip EZ Bar Curl,Biceps,Barbell
+Thigh Adductor,Adductors,Machine
+Groiners,Adductors,BodyOnly
+Band Hip Adductions,Adductors,Bands
+Side Leg Raises,Adductors,BodyOnly
+Lateral Bound,Adductors,BodyOnly
+Groin and Back Stretch,Adductors,None
+Adductor,Adductors,FoamRoll
+Side Lying Groin Stretch,Adductors,None
+Adductor/Groin,Adductors,None
+Lying Bent Leg Groin,Adductors,Other
+Carioca Quick Step,Adductors,None
+Lateral Box Jump,Adductors,Other
+Lateral Cone Hops,Adductors,Other
+Hip Circles (prone),Abductors,BodyOnly
+Standing Hip Circles,Abductors,BodyOnly
+Clam,Abductors,BodyOnly
+Thigh Abductor,Abductors,Machine
+Iliotibial Tract-SMR,Abductors,FoamRoll
+Windmills,Abductors,None
+Fire Hydrant,Abductors,BodyOnly
+Monster Walk,Abductors,Bands
+IT Band and Glute Stretch,Abductors,Other
+Lying Crossover,Abductors,BodyOnly
+Lateral Band Walk,Abductors,Bands
+Hip Circle,Abductors,BodyOnly

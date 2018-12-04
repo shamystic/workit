@@ -9,7 +9,8 @@ CREATE TABLE Equipment
 
 CREATE TABLE Exercise
 (name VARCHAR(120) PRIMARY KEY,
-body_part VARCHAR(120) NOT NULL);
+body_part VARCHAR(120) NOT NULL,
+equipment VARCHAR(120) REFERENCES Equipment(name));
 
 -- CREATE TABLE Workout_Circuit
 -- (circuit_id INTEGER PRIMARY KEY,

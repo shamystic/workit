@@ -27,7 +27,7 @@ def index():
 
 @app.route('/equipment', methods = ['GET'])
 def show_equipment():
-	return render_template('equipment.html', equipment = Equipment.query.all())
+	return render_template('equipment.html', equipment = Equipment.query.with_entities(Equipment.name))
 
 @app.route('/workouts', methods = ['GET'])
 def show_workouts():

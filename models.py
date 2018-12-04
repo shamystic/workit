@@ -25,20 +25,22 @@ class Person(db.Model):
     def is_anonymous(self):
         return False
 
-class Equipment(db.Model):
-    # __tablename__ = 'equipment'
-    name = db.Column(db.String(120), primary_key = True)
-
-    def __repr__(self):
-        return "Equipment Name: {}".format(self.name)
-
 class Exercise(db.Model):
     # __tablename__ = 'exercises'
     name = db.Column(db.String(120), primary_key = True)
     body_part = db.Column(db.String(120))
+    equipment = db.relationship('Equipment', backref = 'exercise', lazy = True)
 
     def __repr__(self):
         return "Exercise Name: {}".format(self.name)
+
+class Equipment(db.Model):
+    # __tablename__ = 'equipment'
+    name = db.Column(db.String(120), primary_key = True)
+    exercise_name = db.Column(db.String(120), db.ForeignKey('exercise.name'), nullable = False)
+
+    def __repr__(self):
+        return "Equipment Name: {}".format(self.name)
 
 # class WorkoutCircuit(db.Model):
 #     circuit_id = db.Column(db.Integer, primary_key = True)
