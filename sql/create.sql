@@ -12,22 +12,27 @@ CREATE TABLE Exercise
 body_part VARCHAR(120) NOT NULL,
 equipment VARCHAR(120) REFERENCES Equipment(name));
 
--- CREATE TABLE Workout_Circuit
--- (circuit_id INTEGER PRIMARY KEY,
--- workout_type VARCHAR(120) NOT NULL);
+CREATE TABLE Workout
+(workout_id INTEGER PRIMARY KEY,
+workout_type VARCHAR(120) NOT NULL);
 
--- CREATE TABLE Fitness_Class
--- (name VARCHAR(120) PRIMARY KEY,
--- location VARCHAR(120));
+CREATE TABLE fitness_class
+(name VARCHAR(120) PRIMARY KEY,
+location VARCHAR(120),
+goal VARCHAR(120));
 
--- CREATE TABLE ownsWorkout
--- (email VARCHAR (120) REFERENCES Person(email),
--- circuit_id INTEGER REFERENCES Workout_Circuit(circuit_id));
+CREATE TABLE has_exercise
+(workout_id INTEGER REFERENCES Workout(workout_id),
+exercise_id VARCHAR(120) REFERENCES Exercise(name),
+PRIMARY KEY(workout_id, exercise_id));
 
--- CREATE TABLE hasFavoriteClass
--- (email VARCHAR (120) REFERENCES Person(email),
--- class_name VARCHAR(120) REFERENCES Fitness_Class(name));
+CREATE TABLE owns_workout
+(email VARCHAR (120) REFERENCES Person(email),
+workout_id INTEGER REFERENCES Workout(workout_id),
+PRIMARY KEY(email, workout_id));
 
--- CREATE TABLE hasExercise
--- (circuit_id INTEGER REFERENCES Workout_Circuit(circuit_id),
--- exercise_name VARCHAR(120) REFERENCES Exercise(name));
+CREATE TABLE has_favorite_class
+(email VARCHAR (120) REFERENCES Person(email),
+class_name VARCHAR(120) REFERENCES fitness_class(name),
+-- class_location VARCHAR(120) REFERENCES fitness_class(location),
+PRIMARY KEY(email, class_name));

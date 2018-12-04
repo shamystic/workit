@@ -10,6 +10,8 @@ from flask_login import LoginManager, login_required, login_user, logout_user, c
 app = Flask(__name__)
 app.config.from_object('config')
 db = SQLAlchemy(app)
+# db.create_all()
+# db.session.commit()
 from models import *
 
 login_manager = LoginManager()
@@ -23,6 +25,7 @@ def load_user(user_id):
 @app.route('/', methods=['GET'])
 def index():
     print(current_user)
+    print(ownsWorkout.query.all())
     return render_template('main.html')
 
 @app.route('/equipment', methods = ['GET'])
