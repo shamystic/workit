@@ -2,3 +2,4 @@ SQLALCHEMY_DATABASE_URI = "postgresql://postgres:password@localhost/dfx"  # 'pos
 SQLALCHEMY_ECHO = True
 DEBUG = True
 SECRET_KEY = 'password'
+SQLALCHEMY_TRACK_MODIFICATIONS = False
