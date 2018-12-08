@@ -2,6 +2,8 @@ Workout application
 
 
 ```
+
+
 # Switch to 'postgres' user to interact with database
 sudo -i -u postgres
 # Recreate the database using create.sql
@@ -15,7 +17,11 @@ select * from <table_name>
 ```
 
 
-
+```
+Useful commands 
+python3 -m pip install psycopg2 --user
+sudo service postgresql restart
+```
 
 ```
 # Python interpreter
@@ -28,6 +34,7 @@ db.session.commit()
 User.query.all()
 User.query.filter_by(username = 'Shamikh')
 ```
+
 
 
 

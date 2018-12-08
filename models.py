@@ -51,7 +51,7 @@ class FitnessClass(db.Model):
     goal = db.Column(db.String(120))
 
     def __repr__(self):
-        return f"Fitness Class Name: '{self.name}', Location: '{self.location}', Goal: '{self.goal}'"
+        return "Fitness Class Name: <{}>, Location: <{}>, Goal: <{}>".format(self.name, self.location, self.goal)
 
 class hasExercise(db.Model):
     workout_id = db.Column('workout_id', db.Integer, db.ForeignKey(Workout.workout_id), primary_key = True)
