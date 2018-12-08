@@ -31,9 +31,9 @@ def index():
 def show_equipment():
 	return render_template('equipment.html', equipment = Equipment.query.with_entities(Equipment.name))
 
-@app.route('/workouts', methods = ['GET'])
+@app.route('/exercises', methods = ['GET'])
 def show_workouts():
-	return render_template('workout.html', workouts = Exercise.query.all())
+	return render_template('exercises.html', exercises = Exercise.query.all())
 
 @app.route('/create-workout', methods = ['GET', 'POST'])
 def create_workout():
