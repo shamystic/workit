@@ -38,14 +38,13 @@ def show_workouts():
 @app.route('/create-workout', methods = ['GET', 'POST'])
 def create_workout():
     if request.method == 'GET':
-        return render_template('workoutForm.html', exercises = Exercise.query.all())
+        return render_template('workout-form.html', exercises = Exercise.query.all())
     workout_name = request.form['name']
     workout_type = request.form['type']
     workout = Workout(workout_id = workout_name, workout_type = workout_type)
     db.session.add(workout)
     db.session.commit()
     for item in request.form.getlist('workout'):
-        print(item)
         temp = hasExercise(workout_id = workout_name, exercise_id = item)
         db.session.add(temp)
         db.session.commit()
