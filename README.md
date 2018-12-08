@@ -1,5 +1,15 @@
 Workout application
 
+- Main page is workout types
+    - Grid system
+    - Each grid item has name of workout type and more information underneath
+- Form to make your own workout
+- Workout classes page
+- Users page
+    - Grid system
+    - Name of user and workouts associated with the user
+
+
 
 ```
 
@@ -18,7 +28,7 @@ select * from <table_name>
 
 
 ```
-Useful commands 
+Useful commands
 python3 -m pip install psycopg2 --user
 sudo service postgresql restart
 ```
