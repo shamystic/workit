@@ -13,7 +13,7 @@ body_part VARCHAR(120) NOT NULL,
 equipment VARCHAR(120) REFERENCES Equipment(name));
 
 CREATE TABLE Workout
-(workout_id INTEGER PRIMARY KEY,
+(workout_id VARCHAR(120) PRIMARY KEY,
 workout_type VARCHAR(120) NOT NULL);
 
 CREATE TABLE fitness_class
@@ -22,13 +22,13 @@ location VARCHAR(120),
 goal VARCHAR(120));
 
 CREATE TABLE has_exercise
-(workout_id INTEGER REFERENCES Workout(workout_id),
+(workout_id VARCHAR(120) REFERENCES Workout(workout_id),
 exercise_id VARCHAR(120) REFERENCES Exercise(name),
 PRIMARY KEY(workout_id, exercise_id));
 
 CREATE TABLE owns_workout
 (email VARCHAR (120) REFERENCES Person(email),
-workout_id INTEGER REFERENCES Workout(workout_id),
+workout_id VARCHAR(120) REFERENCES Workout(workout_id),
 PRIMARY KEY(email, workout_id));
 
 CREATE TABLE has_favorite_class

@@ -42,7 +42,7 @@ class Equipment(db.Model):
         return "Equipment Name: {}".format(self.name)
 
 class Workout(db.Model):
-    workout_id = db.Column(db.Integer, primary_key = True)
+    workout_id = db.Column(db.String(120), primary_key = True)
     workout_type = db.Column(db.String(120))
 
 class FitnessClass(db.Model):
@@ -54,12 +54,12 @@ class FitnessClass(db.Model):
         return "Fitness Class Name: <{}>, Location: <{}>, Goal: <{}>".format(self.name, self.location, self.goal)
 
 class hasExercise(db.Model):
-    workout_id = db.Column('workout_id', db.Integer, db.ForeignKey(Workout.workout_id), primary_key = True)
+    workout_id = db.Column('workout_id', db.String(120), db.ForeignKey(Workout.workout_id), primary_key = True)
     exercise_id = db.Column('exercise_id', db.String(120), db.ForeignKey(Exercise.name), primary_key = True)
 
 class ownsWorkout(db.Model):
     email = db.Column('email', db.String(120), db.ForeignKey(Person.email), primary_key = True)
-    workout_id = db.Column('workout_id', db.Integer, db.ForeignKey(Workout.workout_id), primary_key = True)
+    workout_id = db.Column('workout_id', db.String(120), db.ForeignKey(Workout.workout_id), primary_key = True)
 
 class hasFavoriteClass(db.Model):
     email = db.Column('email', db.String(120), db.ForeignKey(Person.email), primary_key = True)
