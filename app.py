@@ -24,8 +24,8 @@ def load_user(user_id):
 @app.route('/', methods=['GET'])
 def index():
     print(current_user)
-    print(ownsWorkout.query.all())
-    return render_template('main.html')
+    #print(ownsWorkout.query.all())
+    return render_template('untitled.html')
 
 @app.route('/equipment', methods = ['GET'])
 def show_equipment():
