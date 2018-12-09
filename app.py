@@ -76,9 +76,6 @@ def login():
 def register():
     if request.method == 'GET':
         return render_template('register.html')
-    print(request.form['email'])
-    print(request.form['name'])
-    print(request.form['password'])
     user = Person(email = request.form['email'], name = request.form['name'], password = request.form['password'])
     db.session.add(user)
     db.session.commit()
