@@ -32,8 +32,12 @@ def show_equipment():
 	return render_template('equipment.html', equipment = Equipment.query.with_entities(Equipment.name))
 
 @app.route('/exercises', methods = ['GET'])
-def show_workouts():
+def show_exercises():
 	return render_template('exercises.html', exercises = Exercise.query.all())
+
+@app.route('/workouts', methods = ['GET'])
+def show_workouts():
+    return render_template('workouts.html', workouts = Workout.query.with_entities(Workout.workout_type).distinct())
 
 @app.route('/create-workout', methods = ['GET', 'POST'])
 def create_workout():

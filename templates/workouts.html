@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% extends "header.html" %}
+{% block content %}
+    <head>
+    </head>
+    <body>
+    	<h1>Explore Workout Types</h1>
+        {% for item in workouts %}
+            <a href="/workout/{{item.workout_type}}">{{item.workout_type}}</a>
+        {% endfor %}
+    </body>
+{% endblock %}
+</html>
