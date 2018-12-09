@@ -24,8 +24,12 @@ def load_user(user_id):
 @app.route('/', methods=['GET'])
 def index():
     print(current_user)
+<<<<<<< HEAD
     #print(ownsWorkout.query.all())
     return render_template('untitled.html')
+=======
+    return render_template('test.html')
+>>>>>>> 26f3bc12af41e286bce371f649b3eb2f8e9f655d
 
 @app.route('/equipment', methods = ['GET'])
 def show_equipment():
@@ -37,7 +41,9 @@ def show_exercises():
 
 @app.route('/workouts', methods = ['GET'])
 def show_workouts():
-    return render_template('workouts.html', workouts = Workout.query.with_entities(Workout.workout_type).distinct())
+    workouts = Workout.query.with_entities(Workout.workout_type).distinct()
+    exercises = hasExercise.query.all()
+    return render_template('workouts.html', workouts = workouts, exercises = exercises)
 
 @app.route('/create-workout', methods = ['GET', 'POST'])
 def create_workout():
