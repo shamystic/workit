@@ -7,41 +7,40 @@
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">
     </head>
     <form action="" method=post class="contain">
-      <h2>Create a Workout</h2>
-      <div class="control-group">
-          <div class="controls">
-            <input type="text" id="name" name="name" class="text"
-              placeholder="Enter Name of Workout" required>
-          </div>
-      </div>
-      <br>
-      <div class="control-group">
-          <div class="controls">
-            <input type="text" id="type" name="type" class="text"
-              placeholder="Enter Type of Workout" required>
-          </div>
-      </div>
-      <br>
-      {% for item in body_parts %}
+        <h2>Create a Workout</h2>
+        <div class="control-group">
+            <div class="controls">
+                <input type="text" id="name" name="name" class="text"
+                placeholder="Enter Name of Workout" required>
+            </div>
+        </div>
+        <br>
+        <div class="control-group">
+            <div class="controls">
+                <input type="text" id="type" name="type" class="text"
+                placeholder="Enter Type of Workout" required>
+            </div>
+        </div>
+        <br>
+        {% for item in body_parts %}
             <h1>{{item.body_part}}</h1>
             {% for exercise in exercises %}
                 {% if exercise.body_part == item.body_part %}
-
-                  <div class="control-group">
-                      <div class="controls">
-                        <input type="checkbox" name="workout" value="{{exercise.name}}" class="text"> {{exercise.name}}
-                      </div>
-                  </div>
-                 {% endif %}
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="checkbox" name="workout" value="{{exercise.name}}" class="text"> {{exercise.name}}
+                        </div>
+                    </div>
+                {% endif %}
             {% endfor %}
-      {% endfor %}
-      <br>
-      <div class="control-group">
-          <div class="controls">
-            <button type="submit" class="submit">Create Workout</button>
-          </div>
-      </div>
-      <br>
+        {% endfor %}
+        <br>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="submit">Create Workout</button>
+            </div>
+        </div>
+        <br>
     </form>
     {% endblock %}
     </html>
