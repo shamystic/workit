@@ -10,20 +10,23 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
     <body>
-    	<h1>Explore Workout Types</h1>
-        {% for item in workouts %}
-            <a href="/workout/{{item.workout_type}}">
+    	<h1>Explore Workouts</h1>
+        {% for item in workouts|unique %}
                 <div class="col-md-4">
                   <div class="panel panel-primary">
-                    <div class="panel-heading">{{item.workout_type}}</div>
+                    <div class="panel-heading">{{item.workout_id}}</div>
+                    <div class="panel-footer">Workout Type: {{item.workout_type}}</div>
                     {% for exercise in exercises %}
                         {% if exercise.workout_id == item.workout_id %}
-                            <div class="panel-footer">{{exercise.exercise_id}}</div>
+                            <div class="panel-footer">
+                                <a href="/exercise/{{exercise.exercise_id}}">
+                                    {{exercise.exercise_id}}
+                                </a>
+                            </div>
                         {% endif %}
                     {% endfor %}
                   </div>
                 </div>
-            </a>
         {% endfor %}
     </body>
 {% endblock %}

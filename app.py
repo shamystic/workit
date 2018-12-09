@@ -36,7 +36,7 @@ def show_exercises():
 
 @app.route('/workouts', methods = ['GET'])
 def show_workouts():
-    workouts = Workout.query.with_entities(Workout.workout_type).distinct()
+    workouts = Workout.query.all()
     exercises = hasExercise.query.all()
     return render_template('workouts.html', workouts = workouts, exercises = exercises)
 
