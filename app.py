@@ -24,7 +24,7 @@ def load_user(user_id):
 @app.route('/', methods=['GET'])
 def index():
     print(current_user)
-    return render_template('test.html')
+    return render_template('main.html')
 
 @app.route('/equipment', methods = ['GET'])
 def show_equipment():
