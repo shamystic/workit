@@ -6,7 +6,12 @@
 <body>
 	<h1>Users</h1>
     {% for item in users %}
-    <p>{{item.id}}, {{item.name}}, {{item.email}} , {{item.goal}}  </p>
+		<p>{{item.name}}, {{item.email}} , {{item.goal}}  </p>
+		{% for workout in workouts %}
+			{% if item.email == workout.email %}
+				<p>{{workout.workout_id}}</p>
+			{% endif %}
+		{% endfor %}
     {% endfor %}
 </body>
 {% endblock %}

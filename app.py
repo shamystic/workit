@@ -56,7 +56,7 @@ def create_workout():
 
 @app.route('/users', methods = ['GET'])
 def show_users():
-    return render_template('users.html', users = Person.query.all())
+    return render_template('users.html', users = Person.query.all(), workouts = ownsWorkout.query.all())
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
