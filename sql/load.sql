@@ -12,6 +12,7 @@ FROM '/Users/hyakkali/Hemanth/CS316/workit/sql/Exercises.csv' DELIMITER ',' CSV 
 INSERT INTO Workout VALUES
     ('Cardio', 'Strength and Endurance'),
     ('Hemanths Bi/Tri', 'Strength and Endurance'),
+    ('Something something', 'Mind and Body'),
     ('Yoga', 'Mind and Body'),
     ('Hemanth Chest', 'Strength and Endurance');
 
