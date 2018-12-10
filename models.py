@@ -2,12 +2,11 @@ from sqlalchemy import sql, orm
 from app import db
 
 class Person(db.Model):
-    # __tablename__ = 'users'
     email = db.Column(db.String(120), primary_key=True)
     name = db.Column(db.String(120))
     password = db.Column(db.String(120))
     goal = db.Column(db.String(120), nullable = True)
-    # ["Muscle Building", "Fat Loss", "Increase Strength"]
+    # ["Mind & Body", "Strength & Endurance", "Weight Loss", "Aerobics and Balance"]
 
     def __repr__(self):
         return "Person: <{}>, Email: <{}>".format(self.name, self.email)
@@ -25,16 +24,13 @@ class Person(db.Model):
         return False
 
 class Exercise(db.Model):
-    # __tablename__ = 'exercises'
     name = db.Column(db.String(120), primary_key = True)
     body_part = db.Column(db.String(120))
-    equipment = db.relationship('Equipment', backref = 'exercise', lazy = True)
 
     def __repr__(self):
         return "Exercise Name: {}".format(self.name)
 
 class Equipment(db.Model):
-    # __tablename__ = 'equipment'
     name = db.Column(db.String(120), primary_key = True)
     exercises = db.Column(db.String(120), db.ForeignKey(Exercise.name), nullable = False)
 
@@ -49,6 +45,9 @@ class FitnessClass(db.Model):
     name = db.Column(db.String(120), primary_key = True)
     location = db.Column(db.String(120))
     goal = db.Column(db.String(120))
+    description = db.Column(db.String(240))
+    times = db.Column(db.String(120))
+    link = db.Column(db.String(240))
 
     def __repr__(self):
         return "Fitness Class Name: <{}>, Location: <{}>, Goal: <{}>".format(self.name, self.location, self.goal)

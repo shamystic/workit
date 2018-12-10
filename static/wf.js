@@ -44,19 +44,3 @@ for (var i=0 ; i < removals.length ; i++){
     removals[ind].onclick = function(){
       removebuttons(removals[ind].id);
     };})(i) }
-
-// <div class = "exercise-container">
-//         {% for item in body_parts %}
-//             <h2>{{item.body_part}}</h2>
-//         <div class = "container">
-//             <div class="dropdown">
-//             <button class="dropbtn">Dropdown</button>
-//             <div class="dropdown-content">
-//         {% for exercise in exercises %}
-//         {% if exercise.body_part == item.body_part %}
-  
-//             <button type = "button" class = "buttons" value = "{{exercise.name}}" id = "quad"> {{exercise.name}} </button>
-//     {% endif %}
-//             {% endfor %}
-//   </div>
-// </div>

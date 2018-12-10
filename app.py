@@ -49,6 +49,10 @@ def show_workouts():
     exercises = hasExercise.query.all()
     return render_template('workouts.html', workouts = workouts, exercises = exercises)
 
+@app.route('/classes', methods = ['GET'])
+def show_classes():
+    return render_template('classes.html', classes = FitnessClass.query.all())
+
 @app.route('/create-workout', methods = ['GET', 'POST'])
 #@login_required
 def create_workout():
@@ -69,6 +73,13 @@ def create_workout():
         db.session.add(temp)
         db.session.commit()
     return redirect(url_for('create_workout'))
+
+@app.route('/add-favorite/<string:workout_name>', methods = ['GET', 'POST'])
+def add_favorite(workout_name):
+    temp = ownsWorkout(email = current_user.email, workout_id = workout_name)
+    db.session.add(temp)
+    db.session.commit()
+    return redirect(url_for('show_users'))
 
 @app.route('/users', methods = ['GET'])
 def show_users():
@@ -91,7 +102,11 @@ def login():
 def register():
     if request.method == 'GET':
         return render_template('register.html')
-    user = Person(email = request.form['email'], name = request.form['name'], password = request.form['password'])
+    email = request.form['email']
+    name = request.form['name']
+    password = request.form['password']
+    goal = request.form['goal']
+    user = Person(email = email, name = name, password = password, goal = goal)
     db.session.add(user)
     db.session.commit()
     print('User successfully registered!')
