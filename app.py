@@ -24,12 +24,12 @@ def load_user(user_id):
 @app.route('/', methods=['GET'])
 def index():
     print(current_user)
-<<<<<<< HEAD
+#<<<<<<< HEAD
     #print(ownsWorkout.query.all())
-    return render_template('untitled.html')
-=======
-    return render_template('test.html')
->>>>>>> 26f3bc12af41e286bce371f649b3eb2f8e9f655d
+    #return render_template('untitled.html')
+#=======
+    return render_template('main.html')
+#>>>>>>> 26f3bc12af41e286bce371f649b3eb2f8e9f655d
 
 @app.route('/equipment', methods = ['GET'])
 def show_equipment():
