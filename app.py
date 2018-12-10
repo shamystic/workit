@@ -68,7 +68,7 @@ def show_users():
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return render_template('login.html')
+        return render_template('mainTemplate.html')
     email = request.form['email']
     password = request.form['password']
     user = Person.query.filter_by(email = email, password = password).first()
