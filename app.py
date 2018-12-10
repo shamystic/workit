@@ -42,7 +42,7 @@ def show_workouts():
 
 @app.route('/classes', methods = ['GET'])
 def show_classes():
-    return render_template('classes.html', classes = FitnessClass.query.all())        
+    return render_template('classes.html', classes = FitnessClass.query.all())
 
 @app.route('/create-workout', methods = ['GET', 'POST'])
 @login_required
@@ -93,7 +93,11 @@ def login():
 def register():
     if request.method == 'GET':
         return render_template('register.html')
-    user = Person(email = request.form['email'], name = request.form['name'], password = request.form['password'])
+    email = request.form['email']
+    name = request.form['name']
+    password = request.form['password']
+    goal = request.form['goal']
+    user = Person(email = email, name = name, password = password, goal = goal)
     db.session.add(user)
     db.session.commit()
     print('User successfully registered!')
