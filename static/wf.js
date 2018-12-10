@@ -4,7 +4,7 @@ var removals = document.getElementsByClassName('remove');
 
 function buttonpush(butid, butval){
   //alert('button pressed');
-  var div =       document.getElementById(butid +"-text");
+  var div = document.getElementById(butid +"-text");
   
 var newbutval = butval.replace(/\s/g,''); 
   //alert(newbutval);
@@ -39,8 +39,8 @@ function removebuttons(butid){
  
   var nobut = document.getElementById(butid);
  nobut.parentNode.removeChild(nobut);
- var nocheck = document.getElementById(butid +"-check");
-  nocheck.parentNode.removeChild(nocheck);
+ // var nocheck = document.getElementById(butid +"-check");
+ //  nocheck.parentNode.removeChild(nocheck);
  
   
   

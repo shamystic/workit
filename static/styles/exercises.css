@@ -128,3 +128,10 @@ float: left;
   visibility: hidden;
   width: 0%;
 }
+.submit-btn{
+  width: 100%;
+  text-align: center;
+  }
+.submit:hover{
+  cursor: pointer;
+}

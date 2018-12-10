@@ -18,7 +18,7 @@
   </div>
 </div>
     <header>
-        <form action="" method=post >
+        <form action="" method=post id = "form" >
     <div class = "pict">
   <div class = "contain" style="height: 23rem;">
         <h1 style="padding: 1rem;">Create A Workout:</h1>
@@ -29,8 +29,8 @@
             </div>
         </div>
         
-        <div class="control-group">
-            <div class="controls" style="opacity: 0.9;">
+        <div class="control-group" style="opacity: 1;">
+            <div class="controls" >
                 <input type="radio" name="workout_type" value="Mind and Body" class="text"> Mind and Body
             </div>
         </div>
@@ -79,9 +79,10 @@
     </div>
          {% endfor %}
     </div>
-        <div class="control-group">
-            <div class="controls">
-                <button type="submit" class="submit">Create Workout</button>
+    
+        <div class="submit-btn" style="padding-top: 0.5rem; display: inline-block; padding-bottom: 0.8rem;">
+            <div class="controls" >
+                <button type="submit" class="submit" style = "font-size: 3rem; background-color: black; color: white; border-radius: 0.5rem; ">Create Workout</button>
             </div>
         </div>
         <br>
