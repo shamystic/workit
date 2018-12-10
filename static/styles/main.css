@@ -1,8 +1,10 @@
 .container{
-  border : 2px solid #00009c;
-  border-radius: 12px;
+  border : 6px solid #3A266D;
+  border-radius: 5px;
+  border-style: groove;
+
 /*   border-style: outset; */
-  width: 80%;
+  width: 100%;
   margin: auto;
   text-align: center;
   font-family: Montserrat;
@@ -30,14 +32,14 @@ float:left;
   width: 15%;
   padding: 0.1rem;
    margin: 0 auto;
-  border: 0.1rem solid #00009c;
+  border: 0.1rem solid #000000;
   font-size: 1.2rem;
   cursor: pointer;
   
 }
 .submit:hover{
   color:white;
-  background-color: #00009c;
+  background-color: #000000;
 }
 .bottom{
 /*    background: chocolate; */

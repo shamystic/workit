@@ -9,6 +9,12 @@ Workout application
     - Grid system
     - Name of user and workouts associated with the user
 
+TODO
+- Home page
+- Filter and group in exercises page
+- Separate page for each exercise
+- Fitness classes page
+- Add likes column to workouts
 
 
 ```
