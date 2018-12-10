@@ -24,7 +24,7 @@ def load_user(user_id):
 @app.route('/', methods=['GET'])
 def index():
     print(current_user)
-    return render_template('main.html')
+    return render_template('mainTemplate.html')
 
 @app.route('/equipment', methods = ['GET'])
 def show_equipment():
@@ -68,7 +68,7 @@ def show_users():
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return render_template('mainTemplate.html')
+        return render_template('login.html')
     email = request.form['email']
     password = request.form['password']
     user = Person.query.filter_by(email = email, password = password).first()
