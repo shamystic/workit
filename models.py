@@ -28,7 +28,6 @@ class Exercise(db.Model):
     # __tablename__ = 'exercises'
     name = db.Column(db.String(120), primary_key = True)
     body_part = db.Column(db.String(120))
-    equipment = db.relationship('Equipment', backref = 'exercise', lazy = True)
 
     def __repr__(self):
         return "Exercise Name: {}".format(self.name)

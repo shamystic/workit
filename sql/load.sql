@@ -4,20 +4,22 @@ INSERT INTO Person VALUES
     ('shamikh@duke.edu', 'ssh50', NULL, 'password24');
 
 COPY Equipment(name)
-FROM '/Users/hyakkali/CS316/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
+FROM '/Users/hyakkali/Hemanth/CS316/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
 
 COPY Exercise(name, body_part, equipment)
-FROM '/Users/hyakkli/CS316/workit/sql/Exercises.csv' DELIMITER ',' CSV HEADER;
+FROM '/Users/hyakkali/Hemanth/CS316/workit/sql/Exercises.csv' DELIMITER ',' CSV HEADER;
 
 INSERT INTO Workout VALUES
-    ('Cardio', 'Cardio'),
-    ('Hemanths Bi/Tri', 'Bi/Tri'),
-    ('Hemanth Chest', 'Chest');
+    ('Cardio', 'Strength and Endurance'),
+    ('Hemanths Bi/Tri', 'Strength and Endurance'),
+    ('Yoga', 'Mind and Body'),
+    ('Hemanth Chest', 'Strength and Endurance');
 
 INSERT INTO fitness_class VALUES
-    ('Muscle Pump', 'Wilson Gym', 'Muscle Endurance'),
-    ('HIIT', 'Wilson Gym', 'Cardio'),
-    ('Barre', 'Wilson Gym', 'Muscle Endurance');
+    ('Muscle Pump', 'Wilson Gym', 'Strength and Endurance'),
+    ('HIIT', 'Wilson Gym', 'Strength and Endurance'),
+    ('Barre', 'Wilson Gym', 'Strength and Endurance'),
+    ('Yoga', 'Wilson Gym', 'Mind and Body');
 
 INSERT INTO has_exercise VALUES
     ('Cardio', 'Burpee'),
