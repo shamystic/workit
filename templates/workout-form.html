@@ -17,11 +17,19 @@
         <br>
         <div class="control-group">
             <div class="controls">
-                <input type="text" id="type" name="type" class="text"
-                placeholder="Enter Type of Workout" required>
+                <input type="radio" name="workout_type" value="Mind and Body" class="text"> Mind and Body
             </div>
         </div>
-        <br>
+        <div class="control-group">
+            <div class="controls">
+                <input type="radio" name="workout_type" value="Strength and Endurance" class="text"> Strength and Endurance
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input type="radio" name="workout_type" value="Weight Loss" class="text"> Weight Loss
+            </div>
+        </div>
         {% for item in body_parts %}
             <h1>{{item.body_part}}</h1>
             {% for exercise in exercises %}
