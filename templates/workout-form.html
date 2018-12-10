@@ -6,7 +6,7 @@
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/exercises.css') }}">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
     </head>
-    <div class="w3-top" style = "z-index: 8;">
+    <div class="w3-top" style = "z-index: 2;">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
     <a href="#home" class="w3-bar-item w3-button"><b>CampusFitness</b></a>
     <!-- Float links to the right. Hide them on small screens -->
@@ -18,38 +18,44 @@
   </div>
 </div>
     <header>
+        <form action="" method=post >
     <div class = "pict">
-  <div class = "contain">
-        <h2>Create A Workout:</h2>
+  <div class = "contain" style="height: 23rem;">
+        <h1 style="padding: 1rem;">Create A Workout:</h1>
         <div class="control-group">
-            <div class="controls">
+            <div class="controls" style="padding-bottom: 1.4rem;">
                 <input type="text" id="name" name="name" class="text"
                 placeholder="Enter Name of Workout" required>
             </div>
         </div>
         
         <div class="control-group">
-            <div class="controls">
+            <div class="controls" style="opacity: 0.9;">
                 <input type="radio" name="workout_type" value="Mind and Body" class="text"> Mind and Body
             </div>
         </div>
         <div class="control-group">
-            <div class="controls">
+            <div class="controls" style="opacity: 0.9;">
                 <input type="radio" name="workout_type" value="Strength and Endurance" class="text"> Strength and Endurance
             </div>
         </div>
-        <div class="control-group">
+        <div class="control-group" style="opacity: 0.9;">
             <div class="controls">
                 <input type="radio" name="workout_type" value="Weight Loss" class="text"> Weight Loss
             </div>
+
         </div>
     </div> 
+    <div class = "contain" style="z-index: 1; font-size: 1.4rem; color: white; height: 2.4rem;top: 10rem; ">
+    Select Exercises Below:
+</div>
 <img src="{{ url_for('static', filename='images/groupwerk.jpg') }}" id = "pic">
 </div>
+
 </header>
 <p style = "text-align: center;"> Click on an exercise to remove it.</p>
 
-    <form action="" method=post >
+    
         
     <div class = "exercise-container">
         {% for item in body_parts %}
