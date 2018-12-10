@@ -1,20 +1,33 @@
 <DOCTYPE html>
     <html>
-    {% extends "header.html" %}
-    {% block content %}
+    
     <head>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/exercises.css') }}">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
     </head>
-    <form action="" method=post class="contain">
-        <h2>Create a Workout</h2>
+    <div class="w3-top" style = "z-index: 8;">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>CampusFitness</b></a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#workouts" class="w3-bar-item w3-button">Workouts</a>
+      <a href="#customfit" class="w3-bar-item w3-button">CustomFit</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+    <header>
+    <div class = "pict">
+  <div class = "contain">
+        <h2>Create A Workout:</h2>
         <div class="control-group">
             <div class="controls">
                 <input type="text" id="name" name="name" class="text"
                 placeholder="Enter Name of Workout" required>
             </div>
         </div>
-        <br>
+        
         <div class="control-group">
             <div class="controls">
                 <input type="radio" name="workout_type" value="Mind and Body" class="text"> Mind and Body
@@ -30,25 +43,43 @@
                 <input type="radio" name="workout_type" value="Weight Loss" class="text"> Weight Loss
             </div>
         </div>
+    </div> 
+<img src="{{ url_for('static', filename='images/groupwerk.jpg') }}" id = "pic">
+</div>
+</header>
+<p style = "text-align: center;"> Click on an exercise to remove it.</p>
+
+    <form action="" method=post >
+        
+    <div class = "exercise-container">
         {% for item in body_parts %}
-            <h1>{{item.body_part}}</h1>
-            {% for exercise in exercises %}
-                {% if exercise.body_part == item.body_part %}
-                    <div class="control-group">
-                        <div class="controls">
-                            <input type="checkbox" name="workout" value="{{exercise.name}}" class="text"> {{exercise.name}}
-                        </div>
+        <div class = "body-part">
+            <h2>{{item.body_part}}</h2>
+                <div class = "container">
+                    <div class="dropdown">
+                        <button class="dropbtn">Select</button>
+                            <div class="dropdown-content">
+                            {% for exercise in exercises %}       
+                            {% if exercise.body_part == item.body_part %}
+                                <button type = "button" class = "buttons" value = "{{exercise.name}}" id = "{{item.body_part}}"> {{exercise.name}} </button>
+                            {% endif %}
+                            {% endfor %}
+                            </div>
                     </div>
-                {% endif %}
-            {% endfor %}
+                <div class = "selections" id = "{{item.body_part}}-text">
+     
+                </div>
+                </div>
+        </div>
         {% endfor %}
-        <br>
+    </div>
         <div class="control-group">
             <div class="controls">
                 <button type="submit" class="submit">Create Workout</button>
             </div>
         </div>
         <br>
+    
     </form>
-    {% endblock %}
+<script src={{ url_for('static', filename='wf.js') }}></script>
     </html>

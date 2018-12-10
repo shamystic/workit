@@ -1,0 +1,117 @@
+.pict{
+  width:100%;
+  position: relative;
+  height: 80vh;
+}
+
+#pic{
+  width: 100%;
+  position: absolute;
+    top: 0px; left: 0px;
+    height: 100%;
+}
+.contain{
+  z-index: 5;
+  font-family:Verdana,sans-serif;
+  font-weight:0;
+  display: block;
+  letter-spacing:4px;
+  font-size:36px;
+/*    top: 50%;
+   left: 50%;  */
+  position: relative;
+  width: 40%;
+  text-align: center;
+  margin: auto;
+    top: 12rem; 
+/*   left: 0px; */
+   background-color: black;
+  opacity: 0.75;
+   color: white;
+   height: 50%;
+}
+#name{
+  width: 50%;
+  font-size: 1rem;
+}
+.exercise-container{
+  width: 100%;
+  float: left;
+}
+.body-container{
+  width: 16%;
+  float: left;
+  height: 40rem;
+  /*padding: 2rem;*/
+  margin: auto;
+
+}
+.dropbtn {
+    background-color: black;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  float: left;
+  width: 20%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content button:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: black;}
+
+.buttons {
+  width: 100%;
+  font-size: 1rem;
+  background-color:  orange;
+  border: none;
+  padding: 0.5rem;
+}
+.body-part{
+  text-align: center;
+  width: 33%;
+  border: 1px solid black;
+  float: left;
+}
+.selections{
+  border: 2px black solid;
+  width: 20%;
+  float: right;
+  border-radius: 0.4rem;
+  text-align: center;
+  width: 72%;
+  float: right;
+}
+
+.remove{
+/*   margin: 0 auto; */
+  font-size: 0.8rem;
+width: 100%;
+  border: none;
+}
+.remove:hover{
+  cursor: pointer;
+}
