@@ -2,7 +2,6 @@ from sqlalchemy import sql, orm
 from app import db
 
 class Person(db.Model):
-    # __tablename__ = 'users'
     email = db.Column(db.String(120), primary_key=True)
     name = db.Column(db.String(120))
     password = db.Column(db.String(120))
@@ -25,7 +24,6 @@ class Person(db.Model):
         return False
 
 class Exercise(db.Model):
-    # __tablename__ = 'exercises'
     name = db.Column(db.String(120), primary_key = True)
     body_part = db.Column(db.String(120))
 
@@ -33,7 +31,6 @@ class Exercise(db.Model):
         return "Exercise Name: {}".format(self.name)
 
 class Equipment(db.Model):
-    # __tablename__ = 'equipment'
     name = db.Column(db.String(120), primary_key = True)
     exercises = db.Column(db.String(120), db.ForeignKey(Exercise.name), nullable = False)
 
