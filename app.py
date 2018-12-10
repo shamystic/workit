@@ -40,6 +40,10 @@ def show_workouts():
     exercises = hasExercise.query.all()
     return render_template('workouts.html', workouts = workouts, exercises = exercises)
 
+@app.route('/classes', methods = ['GET'])
+def show_classes():
+    return render_template('classes.html', classes = FitnessClass.query.all())        
+
 @app.route('/create-workout', methods = ['GET', 'POST'])
 @login_required
 def create_workout():

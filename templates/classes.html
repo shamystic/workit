@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% extends "header.html" %}
+{% block content %}
+<head>
+    <title>Exercises</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Exercises</h1>
+    {% for item in classes %}
+        <!-- <a href="/exercise/{{item.name}}"> -->
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">{{item.name}}</div>                    
+                    <div class="panel-footer"> Location: {{item.location}}</div>
+                    <div class="panel-footer"> Times: {{item.times}}</div>
+                    <div class="panel-footer"> Fitness Goals: {{item.goal}}</div>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</body>
+{% endblock %}
+</html>

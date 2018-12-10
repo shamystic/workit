@@ -7,7 +7,7 @@ class Person(db.Model):
     name = db.Column(db.String(120))
     password = db.Column(db.String(120))
     goal = db.Column(db.String(120), nullable = True)
-    # ["Muscle Building", "Fat Loss", "Increase Strength"]
+    # ["Mind & Body", "Strength & Endurance", "Weight Loss"]
 
     def __repr__(self):
         return "Person: <{}>, Email: <{}>".format(self.name, self.email)
@@ -47,7 +47,10 @@ class Workout(db.Model):
 class FitnessClass(db.Model):
     name = db.Column(db.String(120), primary_key = True)
     location = db.Column(db.String(120))
-    goal = db.Column(db.String(120))
+    goal = db.Column(db.String(120))    
+    description = db.Column(db.String(240))
+    times = db.Column(db.String(120))
+    link = db.Column(db.String(240))
 
     def __repr__(self):
         return "Fitness Class Name: <{}>, Location: <{}>, Goal: <{}>".format(self.name, self.location, self.goal)

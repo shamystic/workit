@@ -76,7 +76,11 @@ Wilson
 Resources
 1. https://s3.us-east-2.amazonaws.com/prettyprinted/flask_cheatsheet.pdf
 2. Milestone document: https://docs.google.com/document/d/11yxmBUv86-ja9vEM8m_neW0n-UIu0cNmFtObjtKGuho/edit
+3. https://recreation.duke.edu/sites/default/files/atoms/files/FitnessSch.pdf 
 
 =======
 Relationships in SQLAlchemy:
 1. https://docs.sqlalchemy.org/en/latest/orm/basic_relationships.html
+
+
+
