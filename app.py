@@ -60,7 +60,9 @@ def create_workout():
     db.session.add(own)
     db.session.commit()
     print(request.form)
+    print("FORM")
     for item in request.form.getlist('workout'):
+        print(item)
         temp = hasExercise(workout_id = workout_name, exercise_id = item)
         db.session.add(temp)
         db.session.commit()
