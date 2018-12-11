@@ -93,7 +93,9 @@ def add_class(class_name):
 def saved_workouts():
     workouts = ownsWorkout.query.filter_by(email = current_user.email).all()
     exercises = hasExercise.query.all()
-    return render_template('saved-workouts.html', workouts = workouts, exercises = exercises)
+    allClasses = FitnessClass.query.all()
+    favClasses = hasFavoriteClass.query.filter_by(email = current_user.email).all()
+    return render_template('saved-workouts.html', workouts = workouts, exercises = exercises, favClasses = favClasses, classes = allClasses)
 
 @app.route('/users', methods = ['GET'])
 def show_users():
