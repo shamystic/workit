@@ -5,21 +5,25 @@ INSERT INTO Person VALUES
 
 COPY Equipment(name)
 <<<<<<< HEAD
-FROM '/Users/acgraves/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
+FROM '/Users/priyanakkiran/WorkItGit/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
+
+--FROM '/Users/acgraves/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
 
 COPY Exercise(name, body_part, equipment)
-FROM '/Users/acgraves/workit/sql/Exercises.csv' DELIMITER ',' CSV HEADER;
+FROM '/Users/priyanakkiran/WorkItGit/workit/sql/Exercises.csv' DELIMITER ',' CSV HEADER;
 =======
-FROM '/Users/hyakkali/Hemanth/CS316/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
+FROM '/Users/priyanakkiran/WorkItGit/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
 -- FROM '/mnt/c/Users/shami/Projects/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
 
 COPY Exercise(name, body_part, equipment)
-FROM '/Users/hyakkali/Hemanth/CS316/workit/sql/Exercises.csv' DELIMITER ',' CSV HEADER;
+FROM '/Users/priyanakkiran/WorkItGit/workit/sql/Exercises.csv' DELIMITER ',' CSV HEADER;
+--FROM '/Users/hyakkali/Hemanth/CS316/workit/sql/Exercises.csv' DELIMITER ',' CSV HEADER;
 -- FROM '/mnt/c/Users/shami/Projects/workit/sql/Exercises.csv' DELIMITER ',' CSV HEADER;
 >>>>>>> 450a0356db5cd384153c0386741899d94edfda6f
 
 COPY fitness_class(name, location, goal, description, times, link)
-FROM '/Users/hyakkali/Hemanth/CS316/workit/sql/workout_classes.csv' DELIMITER ',' CSV HEADER;
+FROM '/Users/priyanakkiran/WorkItGit/workit/sql/workout_classes.csv' DELIMITER ',' CSV HEADER;
+--FROM '/Users/hyakkali/Hemanth/CS316/workit/sql/workout_classes.csv' DELIMITER ',' CSV HEADER;
 -- FROM '/mnt/c/Users/shami/Projects/workit/sql/workout_classes.csv' DELIMITER ',' CSV HEADER;
 
 INSERT INTO Workout VALUES
