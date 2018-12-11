@@ -59,8 +59,6 @@ def create_workout():
     own = ownsWorkout(email = current_user.email, workout_id = workout_name, favorite = False)
     db.session.add(own)
     db.session.commit()
-    print(request.form)
-    print("FORM")
     for item in request.form.getlist('workout'):
         print(item)
         temp = hasExercise(workout_id = workout_name, exercise_id = item)
@@ -74,6 +72,13 @@ def add_favorite(workout_name):
     db.session.add(temp)
     db.session.commit()
     return redirect(url_for('show_users'))
+
+@app.route('/add-class/<string:class_name>', methods = ['GET', 'POST'])
+def add_class(class_name):
+    temp = hasFavoriteClass(email = current_user.email, class_name = class_name)
+    db.session.add(temp)
+    db.session.commit()
+    return redirect(url_for('saved_workouts'))
 
 @app.route('/saved-workouts', methods = ['GET'])
 def saved_workouts():
