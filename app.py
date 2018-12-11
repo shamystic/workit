@@ -1,7 +1,6 @@
-from flask import Flask, request, render_template, url_for, session, redirect, jsonify, flash, Response, current_app
+from flask import Flask, request, render_template, url_for, session, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
-import json
 
 # do current_user to get logged in user
 # do current_user.email to get current email
