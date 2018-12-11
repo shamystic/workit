@@ -41,7 +41,9 @@ INSERT INTO has_exercise VALUES
 INSERT INTO owns_workout VALUES
     ('hemanth.yakkali@duke.edu','Hemanth Chest', True),
     ('hemanth.yakkali@duke.edu', 'Hemanths Bi/Tri', True),
-    ('shamikh.hossain@duke.edu', 'Cardio', False);
+    ('hemanth.yakkali@duke.edu', 'Something something', False),
+    ('hemanth.yakkali@duke.edu', 'Cardio', False),
+    ('shamikh.hossain@duke.edu', 'Cardio', True);
 
 INSERT INTO has_favorite_class VALUES
     ('hemanth.yakkali@duke.edu', 'Muscle Pump Xpress'),

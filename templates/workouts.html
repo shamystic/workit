@@ -21,9 +21,9 @@
         {% if item.workout_id|length > 0 %}
         <div  style = "float: left; width: 33%; padding-left: 0.5rem;padding-top: 1rem; display: inline-block; ">
             <div class="panel panel-primary" style="border: none;">
-                <div class="panel-heading" style="background-color: black; height: 1rem; line-height: 0px;"><span style="color: #BAA9EA;">{{item.workout_id}} </span> 
+                <div class="panel-heading" style="background-color: black; height: 1rem; line-height: 0px;"><span style="color: #BAA9EA;">{{item.workout_id}} </span>
 
-                    {% if item.workout_id in owned_workouts %}
+                    {% if (item.workout_id not in fav_workouts) and (item.workout_id not in my_workouts) %}
                     <a href="/add-favorite/{{item.workout_id}}">
                         <span style="float: right; color: gold;">Favorite This Workout</span>
                     </a>
@@ -34,12 +34,12 @@
                 {% for exercise in exercises %}
                     {% if exercise.workout_id == item.workout_id %}
                         {% set list1 = exercise.exercise_id.split(' ') %}
-        
+
                         {% set my_string = list1|join("-") %}
                         <div class="panel-footer" style="text-align: center;">
                             <a href="https://www.bodybuilding.com/exercises/{{my_string}}" target= "_blank">
                         {{exercise.exercise_id}}
-                            </a>          
+                            </a>
                         </div>
                     {% endif %}
 
@@ -47,7 +47,7 @@
             </div>
         </div>
         <!-- <a href="/add-favorite/{{item.workout_id}}"><button type="button">Favorite this workout</button></a> -->
-       {% endif %} 
+       {% endif %}
     {% endfor %}
 </div>
 <br>

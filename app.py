@@ -46,15 +46,16 @@ def show_exercises():
 def show_workouts():
     workouts = Workout.query.all()
     exercises = hasExercise.query.all()
-    owned_workouts = ownsWorkout.query.filter_by(favorite = False).with_entities(ownsWorkout.workout_id)
-    workoutsls = []
+    owned_workouts = ownsWorkout.query.filter_by(email = current_user.email, favorite = False).with_entities(ownsWorkout.workout_id)
+    made_workouts = ownsWorkout.query.filter_by(email = current_user.email, favorite = True).with_entities(ownsWorkout.workout_id)
+    fav_workouts = []
+    my_workouts = []
     for item in owned_workouts:
-        # print("ITEM", item)
-        # print("DICT", type(item.workout_id))
-        workoutsls.append(item.workout_id)
-    # print("TYPE",type(owned_workouts))
-    # print(workoutsls)
-    return render_template('workouts.html', workouts = workouts, exercises = exercises, owned_workouts = workoutsls)
+        my_workouts.append(item.workout_id)
+    for item in made_workouts:
+        fav_workouts.append(item.workout_id)
+
+    return render_template('workouts.html', workouts = workouts, exercises = exercises, fav_workouts = fav_workouts, my_workouts = my_workouts)
 
 @app.route('/classes', methods = ['GET'])
 def show_classes():
@@ -88,7 +89,7 @@ def add_favorite(workout_name):
     temp = ownsWorkout(email = current_user.email, workout_id = workout_name, favorite = True)
     db.session.add(temp)
     db.session.commit()
-    return redirect(url_for('show_users'))
+    return redirect(url_for('saved_workouts'))
 
 @app.route('/add-class/<string:class_name>', methods = ['GET', 'POST'])
 @login_required
