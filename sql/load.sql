@@ -22,11 +22,11 @@ FROM '/Users/hyakkali/Hemanth/CS316/workit/sql/workout_classes.csv' DELIMITER ',
 -- FROM '/mnt/c/Users/shami/Projects/workit/sql/workout_classes.csv' DELIMITER ',' CSV HEADER;
 
 INSERT INTO Workout VALUES
-    ('Cardio', 'Strength & Endurance'),
-    ('Hemanths Bi/Tri', 'Strength & Endurance'),
-    ('Something something', 'Mind & Body'),
-    ('Yoga', 'Mind & Body'),
-    ('Hemanth Chest', 'Strength & Endurance');
+    ('Cardio', 'Strength and Endurance'),
+    ('Hemanths BiTri', 'Strength and Endurance'),
+    ('Something something', 'Mind and Body'),
+    ('Yoga', 'Mind and Body'),
+    ('Hemanth Chest', 'Strength and Endurance');
 
 INSERT INTO has_exercise VALUES
     ('Cardio', 'Burpee'),
@@ -35,12 +35,12 @@ INSERT INTO has_exercise VALUES
     ('Hemanth Chest', 'Pushups'),
     ('Hemanth Chest', 'Decline Barbell Bench Press'),
     ('Hemanth Chest', 'Pullups'),
-    ('Hemanths Bi/Tri', 'Seated Triceps Press'),
-    ('Hemanths Bi/Tri', 'Cross Body Hammer Curl');
+    ('Hemanths BiTri', 'Seated Triceps Press'),
+    ('Hemanths BiTri', 'Cross Body Hammer Curl');
 
 INSERT INTO owns_workout VALUES
     ('hemanth.yakkali@duke.edu','Hemanth Chest', True),
-    ('hemanth.yakkali@duke.edu', 'Hemanths Bi/Tri', True),
+    ('hemanth.yakkali@duke.edu', 'Hemanths BiTri', True),
     ('hemanth.yakkali@duke.edu', 'Something something', False),
     ('hemanth.yakkali@duke.edu', 'Cardio', False),
     ('shamikh.hossain@duke.edu', 'Cardio', True);

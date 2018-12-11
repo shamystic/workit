@@ -5,14 +5,10 @@ CREATE TABLE Person (
     password VARCHAR(120) NOT NULL
 );
 
-CREATE TABLE Equipment (
-    name VARCHAR(120) PRIMARY KEY
-);
-
 CREATE TABLE Exercise (
     name VARCHAR(120) PRIMARY KEY,
     body_part VARCHAR(120) NOT NULL,
-    equipment VARCHAR(120) REFERENCES Equipment(name)
+    equipment VARCHAR(120) NOT NULL
 );
 
 CREATE TABLE Workout (
@@ -45,6 +41,5 @@ CREATE TABLE owns_workout (
 CREATE TABLE has_favorite_class (
     email VARCHAR (120) REFERENCES Person(email),
     class_name VARCHAR(120) REFERENCES fitness_class(name),
-    -- class_location VARCHAR(120) REFERENCES fitness_class(location),
     PRIMARY KEY(email, class_name)
 );
