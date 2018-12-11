@@ -7,7 +7,7 @@ function buttonpush(butid, butval){
   var div = document.getElementById(butid +"-text");
   div.style.visibility = "visible";
   var disclaimer = document.getElementById("disc");
-  disclaimer.style.visibilty = "visible";
+  disclaimer.style.visibility = "visible";
   
 var newbutval = butval.replace(/\s/g,''); 
   //alert(newbutval);
@@ -25,7 +25,7 @@ var newbutval = butval.replace(/\s/g,'');
     
  x.type = "checkbox";
     x.value= butval; 
-    x.name = butid;
+    x.name = "workout";
     x.id = newbutid +"-check";
     x.checked = true;
     
