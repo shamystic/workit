@@ -28,11 +28,11 @@ def index():
 
 @app.route('/equipment', methods = ['GET'])
 def show_equipment():
-	return render_template('equipment.html', equipment = Equipment.query.with_entities(Equipment.name))
+    return render_template('equipment.html', equipment = Equipment.query.with_entities(Equipment.name))
 
 @app.route('/exercises', methods = ['GET'])
 def show_exercises():
-	return render_template('exercises.html', exercises = Exercise.query.all())
+    return render_template('exercises.html', exercises = Exercise.query.all())
 
 @app.route('/workouts', methods = ['GET'])
 def show_workouts():
@@ -85,7 +85,7 @@ def show_users():
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return render_template('login.html')
+        return render_template('loginEdit.html')
     email = request.form['email']
     password = request.form['password']
     user = Person.query.filter_by(email = email, password = password).first()
