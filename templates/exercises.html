@@ -6,6 +6,19 @@
 {% block content %}
     <h1 class="w3-jumbo"><b>All Exercises</b></h1>
     {% for item in exercises %}
+        {% set list1 = item.name.split(' ') %}
+
+        {% set my_string = list1|join("-") %}
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+
+                   <a href="https://www.bodybuilding.com/exercises/{{my_string}}" target= "_blank"> <div class="panel-heading">{{item.name}}</div></a>
+                    <!-- <div class="panel-footer">Related Body Part: {{item.body_part}}</div> -->
+                    <p>Related Body Part: {{item.body_part}}, Required Equipment: {{item.equipment}}</p>
+                    <br>
+                    </div>
+            </div>
+
 
     <div class="col-sm-4">
         <div class="panel panel-primary">
