@@ -23,8 +23,7 @@ FROM '/Users/hyakkali/Hemanth/CS316/workit/sql/workout_classes.csv' DELIMITER ',
 
 INSERT INTO Workout VALUES
     ('Cardio', 'Strength and Endurance'),
-    ('Hemanths BiTri', 'Strength and Endurance'),
-    ('Something something', 'Mind and Body'),
+    ('Hemanth BiTri', 'Strength and Endurance'),
     ('Yoga', 'Mind and Body'),
     ('Hemanth Chest', 'Strength and Endurance');
 
@@ -35,13 +34,15 @@ INSERT INTO has_exercise VALUES
     ('Hemanth Chest', 'Pushups'),
     ('Hemanth Chest', 'Decline Barbell Bench Press'),
     ('Hemanth Chest', 'Pullups'),
-    ('Hemanths BiTri', 'Seated Triceps Press'),
-    ('Hemanths BiTri', 'Cross Body Hammer Curl');
+    ('Hemanth BiTri', 'Seated Triceps Press'),
+    ('Hemanth BiTri', 'Cross Body Hammer Curl'),
+    ('Yoga', 'Pullups'),
+    ('Yoga', 'Muscle Up');
 
 INSERT INTO owns_workout VALUES
     ('hemanth.yakkali@duke.edu','Hemanth Chest', True),
-    ('hemanth.yakkali@duke.edu', 'Hemanths BiTri', True),
-    ('hemanth.yakkali@duke.edu', 'Something something', False),
+    ('hemanth.yakkali@duke.edu', 'Hemanth BiTri', True),
+    ('hemanth.yakkali@duke.edu', 'Yoga', False),
     ('hemanth.yakkali@duke.edu', 'Cardio', False),
     ('shamikh.hossain@duke.edu', 'Cardio', True);
 
