@@ -1,7 +1,7 @@
 {% extends "header.html" %}
 
 {% block head %}
-<title>Exercises</title>
+<title>Users</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 {% endblock %}
@@ -17,6 +17,7 @@
 		<a href="/workout/{{workout.workout_id}}">
 			<div class="panel-footer">{{workout.workout_id}}</div>
 		</a>
+		{{workout.favorite}}
 		{% endif %}
 		{% endfor %}
 	</div>

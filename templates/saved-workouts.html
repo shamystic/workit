@@ -3,6 +3,7 @@
 {% extends "header.html" %}
 {% block content %}
 <head>
+<<<<<<< HEAD
     <title>My Workouts</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -117,6 +118,84 @@ size:
             {% endif %}
         {% endfor %}
     {% endfor %}
+=======
+	<title>My Workouts</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<div class="w3-container w3-padding-32" id="myworkouts">
+		<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Saved Workouts</h3>
+	</div>
+	{% for item in workouts %}
+	{% if item.favorite == false %}
+
+	<div class="col-md-4">
+		<div class="panel panel-primary">
+			<div class="panel-heading">{{item.workout_id}}</div>
+			{% for exercise in exercises %}
+			{% if exercise.workout_id == item.workout_id %}
+			<div class="panel-footer">
+				<a href="/exercise/{{exercise.exercise_id}}">
+					{{exercise.exercise_id}}
+				</a>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+	{% endfor %}
+
+	<div class="w3-container w3-padding-32" id="faveworkouts">
+		<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorite Workouts</h3>
+	</div>
+	{% for item in workouts %}
+	{% if item.favorite == true %}
+
+	<div class="col-md-4">
+		<div class="panel panel-primary">
+			<div class="panel-heading">{{item.workout_id}}</div>
+			{% for exercise in exercises %}
+			{% if exercise.workout_id == item.workout_id %}
+			<div class="panel-footer">
+				<a href="/exercise/{{exercise.exercise_id}}">
+					{{exercise.exercise_id}}
+				</a>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+	{% endfor %}
+	<div class="w3-container w3-padding-32" id="faveworkouts">
+		<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorite Classes</h3>
+	</div>
+	{% for item in favClasses %}
+		{% for class in classes %}
+			{% if class.name == item.class_name %}
+				<div class="col-md-4">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<a href="{{class.link}}" target= "_blank">
+								{{item.class_name}}
+							</a>
+						</div>
+						<div class="panel-footer">{{class.goal}}</div>
+						<div class="panel-footer">{{class.description}}</div>
+						<div class="panel-footer">{{class.location}}</div>
+						<div class="panel-footer">{{class.times}}</div>
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+>>>>>>> e29cb6a9d4aa0da171e950cd479edd2c0d66dcb5
 
 </body>
 {% endblock %}

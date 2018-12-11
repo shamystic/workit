@@ -16,6 +16,11 @@
                     <div class="panel-footer"> Location: {{item.location}}</div>
                     <div class="panel-footer"> Times: {{item.times}}</div>
                     <div class="panel-footer"> Fitness Goals: {{item.goal}}</div>
+                    <div class="panel-footer">
+                        <form class="" action="/add-class/{{item.name}}" method="post">
+                            <button type="submit" class="submit" name="button">Favorite Class</button>
+                        </form>
+                    </div>
                 </div>
             </div>
     {% endfor %}

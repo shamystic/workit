@@ -1,8 +1,7 @@
 from flask import Flask, request, render_template, url_for, session, redirect, jsonify, flash, Response, current_app
 from flask_sqlalchemy import SQLAlchemy
-from add_equipment import equipment
-from get_workouts import workouts
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
+import json
 
 # do current_user to get logged in user
 # do current_user.email to get current email
@@ -35,9 +34,9 @@ def index():
         classes = FitnessClass.query.filter_by(goal = focus)
         return render_template('classes.html', classes = classes)
 
-@app.route('/equipment', methods = ['GET'])
-def show_equipment():
-    return render_template('equipment.html', equipment = Equipment.query.with_entities(Equipment.name))
+# @app.route('/equipment', methods = ['GET'])
+# def show_equipment():
+#     return render_template('equipment.html', equipment = Equipment.query.with_entities(Equipment.name))
 
 @app.route('/exercises', methods = ['GET'])
 def show_exercises():
@@ -47,14 +46,22 @@ def show_exercises():
 def show_workouts():
     workouts = Workout.query.all()
     exercises = hasExercise.query.all()
-    return render_template('workouts.html', workouts = workouts, exercises = exercises)
+    owned_workouts = ownsWorkout.query.filter_by(favorite = False).with_entities(ownsWorkout.workout_id)
+    workoutsls = []
+    for item in owned_workouts:
+        print("ITEM", item)
+        print("DICT", type(item.workout_id))
+        workoutsls.append(item.workout_id)
+    print("TYPE",type(owned_workouts))
+    print(workoutsls)
+    return render_template('workouts.html', workouts = workouts, exercises = exercises, workoutsls = owned_workouts)
 
 @app.route('/classes', methods = ['GET'])
 def show_classes():
     return render_template('classes.html', classes = FitnessClass.query.all())
 
 @app.route('/create-workout', methods = ['GET', 'POST'])
-#@login_required
+@login_required
 def create_workout():
     if request.method == 'GET':
         exercises = Exercise.query.all()
@@ -73,9 +80,10 @@ def create_workout():
         temp = hasExercise(workout_id = workout_name, exercise_id = item)
         db.session.add(temp)
         db.session.commit()
-    return redirect(url_for('create_workout'))
+    return redirect(url_for('saved_workouts'))
 
 @app.route('/add-favorite/<string:workout_name>', methods = ['GET', 'POST'])
+@login_required
 def add_favorite(workout_name):
     temp = ownsWorkout(email = current_user.email, workout_id = workout_name, favorite = True)
     db.session.add(temp)
@@ -83,6 +91,7 @@ def add_favorite(workout_name):
     return redirect(url_for('show_users'))
 
 @app.route('/add-class/<string:class_name>', methods = ['GET', 'POST'])
+@login_required
 def add_class(class_name):
     temp = hasFavoriteClass(email = current_user.email, class_name = class_name)
     db.session.add(temp)
@@ -90,6 +99,7 @@ def add_class(class_name):
     return redirect(url_for('saved_workouts'))
 
 @app.route('/saved-workouts', methods = ['GET'])
+@login_required
 def saved_workouts():
     workouts = ownsWorkout.query.filter_by(email = current_user.email).all()
     exercises = hasExercise.query.all()

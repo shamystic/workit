@@ -4,6 +4,23 @@ INSERT INTO Person VALUES
     ('shamikh@duke.edu', 'ssh50', NULL, 'password24');
 
 COPY Equipment(name)
+<<<<<<< HEAD
+FROM '/Users/acgraves/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
+-- FROM '/Users/priyanakkiran/WorkItGit/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
+
+
+COPY Exercise(name, body_part, equipment)
+FROM '/Users/acgraves/workit/sql/Exercises.csv' DELIMITER ',' CSV HEADER;
+-- FROM '/Users/priyanakkiran/WorkItGit/workit/sql/Exercises.csv' DELIMITER ',' CSV HEADER;
+-- FROM '/Users/priyanakkiran/WorkItGit/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
+-- FROM '/mnt/c/Users/shami/Projects/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
+
+
+
+COPY fitness_class(name, location, goal, description, times, link)
+FROM '/Users/acgraves/workit/sql/workout_classes.csv' DELIMITER ',' CSV HEADER;
+-- FROM '/Users/priyanakkiran/WorkItGit/workit/sql/workout_classes.csv' DELIMITER ',' CSV HEADER;
+=======
 -- FROM '/Users/acgraves/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
 --FROM '/Users/hyakkali/Hemanth/CS316/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
 FROM '/Users/priyanakkiran/WorkItGit/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
@@ -16,9 +33,16 @@ FROM '/Users/priyanakkiran/WorkItGit/workit/sql/Exercises.csv' DELIMITER ',' CSV
 
 COPY fitness_class(name, location, goal, description, times, link)
 -- FROM '/Users/acgraves/workit/sql/workout_classes.csv' DELIMITER ',' CSV HEADER;
+>>>>>>> 40c0f3ca159a02e2994ad5e432a0917f81bb55ff
 --FROM '/Users/hyakkali/Hemanth/CS316/workit/sql/workout_classes.csv' DELIMITER ',' CSV HEADER;
 FROM '/Users/priyanakkiran/WorkItGit/workit/sql/workout_classes.csv' DELIMITER ',' CSV HEADER;
 -- FROM '/mnt/c/Users/shami/Projects/workit/sql/workout_classes.csv' DELIMITER ',' CSV HEADER;
+<<<<<<< HEAD
+-- FROM '/Users/hyakkali/Hemanth/CS316/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER; 
+-- FROM '/mnt/c/Users/shami/Projects/workit/sql/Equipment.csv' DELIMITER ',' CSV HEADER;
+
+=======
+>>>>>>> 40c0f3ca159a02e2994ad5e432a0917f81bb55ff
 
 INSERT INTO Workout VALUES
     ('Cardio', 'Strength & Endurance'),
