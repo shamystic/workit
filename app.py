@@ -26,9 +26,12 @@ def index():
         return render_template('mainTemplate.html')
     challenge = request.form['challenge']
     focus = request.form['focus']
+    print("FOCUS", focus)
     if (challenge == 'workout'):
         workouts = Workout.query.filter_by(workout_type = focus)
-        return render_template('workouts.html', workouts = workouts)
+        exercises = hasExercise.query.all()
+        print("WORKOUT", workouts)
+        return render_template('workouts.html', workouts = workouts, exercises = exercises)
     elif (challenge == 'class'):
         classes = FitnessClass.query.filter_by(goal = focus)
         return render_template('classes.html', classes = classes)
@@ -63,7 +66,7 @@ def show_classes():
         fav_class_list = []
         for item in fav_classes:
             fav_class_list.append(item.class_name)
-            return render_template('classes.html', classes = classes, fav_classes = fav_class_list)
+        return render_template('classes.html', classes = classes, fav_classes = fav_class_list)
     else:
         return render_template('classes.html', classes = classes)
 
@@ -114,9 +117,9 @@ def saved_workouts():
     favClasses = hasFavoriteClass.query.filter_by(email = current_user.email).all()
     return render_template('saved-workouts.html', workouts = workouts, exercises = exercises, favClasses = favClasses, classes = allClasses)
 
-@app.route('/users', methods = ['GET'])
-def show_users():
-    return render_template('users.html', users = Person.query.all(), workouts = ownsWorkout.query.all())
+# @app.route('/users', methods = ['GET'])
+# def show_users():
+#     return render_template('users.html', users = Person.query.all(), workouts = ownsWorkout.query.all())
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
