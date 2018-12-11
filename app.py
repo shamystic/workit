@@ -71,7 +71,7 @@ def create_workout():
         temp = hasExercise(workout_id = workout_name, exercise_id = item)
         db.session.add(temp)
         db.session.commit()
-    return redirect(url_for('create_workout'))
+    return redirect(url_for('saved_workouts'))
 
 @app.route('/add-favorite/<string:workout_name>', methods = ['GET', 'POST'])
 @login_required
