@@ -21,10 +21,19 @@ login_manager.login_view = 'login'
 def load_user(user_id):
     return Person.query.get(user_id)
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     print(current_user)
-    return render_template('mainTemplate.html')
+    if request.method == 'GET':
+        return render_template('mainTemplate.html')
+    challenge = request.form['challenge']
+    focus = request.form['focus']
+    if (challenge == 'workout'):
+        workouts = Workout.query.filter_by(workout_type = focus)
+        return render_template('workouts.html', workouts = workouts)
+    elif (challenge == 'class'):
+        classes = FitnessClass.query.filter_by(goal = focus)
+        return render_template('classes.html', classes = classes)
 
 @app.route('/equipment', methods = ['GET'])
 def show_equipment():
