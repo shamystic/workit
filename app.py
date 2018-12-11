@@ -1,7 +1,5 @@
 from flask import Flask, request, render_template, url_for, session, redirect, jsonify, flash, Response, current_app
 from flask_sqlalchemy import SQLAlchemy
-from add_equipment import equipment
-from get_workouts import workouts
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 import json
 
@@ -36,9 +34,9 @@ def index():
         classes = FitnessClass.query.filter_by(goal = focus)
         return render_template('classes.html', classes = classes)
 
-@app.route('/equipment', methods = ['GET'])
-def show_equipment():
-    return render_template('equipment.html', equipment = Equipment.query.with_entities(Equipment.name))
+# @app.route('/equipment', methods = ['GET'])
+# def show_equipment():
+#     return render_template('equipment.html', equipment = Equipment.query.with_entities(Equipment.name))
 
 @app.route('/exercises', methods = ['GET'])
 def show_exercises():
@@ -63,7 +61,7 @@ def show_classes():
     return render_template('classes.html', classes = FitnessClass.query.all())
 
 @app.route('/create-workout', methods = ['GET', 'POST'])
-#@login_required
+@login_required
 def create_workout():
     if request.method == 'GET':
         exercises = Exercise.query.all()
@@ -89,6 +87,7 @@ def create_workout():
     return redirect(url_for('create_workout'))
 
 @app.route('/add-favorite/<string:workout_name>', methods = ['GET', 'POST'])
+@login_required
 def add_favorite(workout_name):
     temp = ownsWorkout(email = current_user.email, workout_id = workout_name, favorite = True)
     db.session.add(temp)
@@ -96,6 +95,7 @@ def add_favorite(workout_name):
     return redirect(url_for('show_users'))
 
 @app.route('/add-class/<string:class_name>', methods = ['GET', 'POST'])
+@login_required
 def add_class(class_name):
     temp = hasFavoriteClass(email = current_user.email, class_name = class_name)
     db.session.add(temp)
@@ -103,6 +103,7 @@ def add_class(class_name):
     return redirect(url_for('saved_workouts'))
 
 @app.route('/saved-workouts', methods = ['GET'])
+@login_required
 def saved_workouts():
     workouts = ownsWorkout.query.filter_by(email = current_user.email).all()
     exercises = hasExercise.query.all()
