@@ -72,6 +72,12 @@ def add_favorite(workout_name):
     db.session.commit()
     return redirect(url_for('show_users'))
 
+@app.route('/saved-workouts', methods = ['GET'])
+def saved_workouts():
+    workouts = ownsWorkout.query.filter_by(email = current_user.email).all()
+    exercises = hasExercise.query.all()
+    return render_template('saved-workouts.html', workouts = workouts, exercises = exercises)
+
 @app.route('/users', methods = ['GET'])
 def show_users():
     return render_template('users.html', users = Person.query.all(), workouts = ownsWorkout.query.all())
