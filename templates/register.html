@@ -1,65 +1,66 @@
-<DOCTYPE html>
-    <html>
-    {% extends "header.html" %}
-    {% block content %}
-    <head>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">
-    </head>
-      <form action="" method=post class="contain">
-        <h2>Register</h2>
+{% extends "header.html" %}
 
-        <div class="control-group">
-            <div class="controls">
-              <input type="email" id="email" name="email" class="text"
-                placeholder="Enter Email" value="{{ request.form.username }}"
-                required>
-            </div>
+{% block head %}
+<title>Register</title>
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<form action="" method=post class="contain">
+    <h2>Register</h2>
+
+    <div class="control-group">
+        <div class="controls">
+            <input type="email" id="email" name="email" class="text"
+            placeholder="Enter Email" value="{{ request.form.username }}"
+            required>
         </div>
-        <br>
-        <div class="control-group">
-            <div class="controls">
-              <input type="text" id="name" name="name" class="text"
-                placeholder="Enter Your Name" value="{{ request.form.name }}"
-                required>
-            </div>
+    </div>
+    <br>
+    <div class="control-group">
+        <div class="controls">
+            <input type="text" id="name" name="name" class="text"
+            placeholder="Enter Your Name" value="{{ request.form.name }}"
+            required>
         </div>
-        <br>
-        <div class="control-group">
-            <div class="controls">
-              <input type="password" id="password" name="password" class="text"
-                placeholder="Enter Password" value="{{ request.form.password }}"
-                required>
-            </div>
+    </div>
+    <br>
+    <div class="control-group">
+        <div class="controls">
+            <input type="password" id="password" name="password" class="text"
+            placeholder="Enter Password" value="{{ request.form.password }}"
+            required>
         </div>
-        <h3>Fitness Goal</h3>
-        <div class="control-group">
-            <div class="controls">
-                <input type="radio" name="goal" value="Mind and Body" class="text"> Mind and Body
-            </div>
+    </div>
+    <h3>Fitness Goal</h3>
+    <div class="control-group">
+        <div class="controls">
+            <input type="radio" name="goal" value="Mind and Body" class="text"> Mind and Body
         </div>
-        <div class="control-group">
-            <div class="controls">
-                <input type="radio" name="goal" value="Strength and Endurance" class="text"> Strength and Endurance
-            </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <input type="radio" name="goal" value="Strength and Endurance" class="text"> Strength and Endurance
         </div>
-        <div class="control-group">
-            <div class="controls">
-                <input type="radio" name="goal" value="Weight Loss" class="text"> Weight Loss
-            </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <input type="radio" name="goal" value="Weight Loss" class="text"> Weight Loss
         </div>
-        <div class="control-group">
-            <div class="controls">
-                <input type="radio" name="goal" value="Aerobics and Balance" class="text"> Aerobics and Balance
-            </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <input type="radio" name="goal" value="Aerobics and Balance" class="text"> Aerobics and Balance
         </div>
-        <br>
-        <div class="control-group">
-            <div class="controls">
-              <button type="submit" class="submit">Signup</button>
-            </div>
+    </div>
+    <br>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="submit">Register</button>
         </div>
-        <br>
-      </form>
-    {% endblock %}
-    </html>
+    </div>
+    <br>
+</form>
+{% endblock %}

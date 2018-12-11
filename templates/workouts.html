@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
 {% extends "header.html" %}
+
+{% block head %}
+<title>Workouts</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% endblock %}
+
 {% block content %}
-<head>
-    <title>Workouts</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-</head>
-<body>
     <h1 class="w3-jumbo"><b>All Workouts</b></h1>
     {% for item in workouts|unique %}
         <div class="col-md-4">
@@ -20,9 +16,7 @@
                 {% for exercise in exercises %}
                     {% if exercise.workout_id == item.workout_id %}
                     <div class="panel-footer">
-                        <a href="/exercise/{{exercise.exercise_id}}">
-                            {{exercise.exercise_id}}
-                        </a>
+                        {{exercise.exercise_id}}
                     </div>
                     {% endif %}
                 {% endfor %}
@@ -32,6 +26,4 @@
         <br>
         <br>
     {% endfor %}
-</body>
 {% endblock %}
-</html>
