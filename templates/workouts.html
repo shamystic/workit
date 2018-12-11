@@ -9,7 +9,7 @@
 {% block content %}
 <body>
     <div class="w3-container w3-padding-32" id="myworkouts">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">All Workouts</h3>
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="text-align: center;">All Workouts</h3>
     </div>
     <div class = "bigdiv" style = "height: 100%; position: relative;">
     {% for triple in workouts|batch(3, '')%}

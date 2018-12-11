@@ -34,7 +34,7 @@
 </style>
 
 <div class="w3-container w3-padding-32" id="myworkouts">
-	<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Saved Workouts</h3>
+	<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="text-align: center;">Saved Workouts</h3>
 </div>
 {% for item in workouts %}
 {% if item.favorite == false %}
@@ -57,7 +57,7 @@
 {% endfor %}
 
 <div class="w3-container w3-padding-32" id="faveworkouts">
-	<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorite Workouts</h3>
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="text-align: center;">Favorite Workouts</h3>
 </div>
 {% for item in workouts %}
 {% if item.favorite == true %}
@@ -79,7 +79,7 @@
 {% endif %}
 {% endfor %}
 <div class="w3-container w3-padding-32" id="faveworkouts">
-	<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorite Classes</h3>
+	<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="text-align: center;">Favorite Classes</h3>
 </div>
 {% for item in favClasses %}
 {% for class in classes %}
