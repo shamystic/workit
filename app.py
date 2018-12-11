@@ -46,21 +46,26 @@ def show_exercises():
 def show_workouts():
     workouts = Workout.query.all()
     exercises = hasExercise.query.all()
-    owned_workouts = ownsWorkout.query.filter_by(email = current_user.email).with_entities(ownsWorkout.workout_id)
-    saved_workouts = []
-    for item in owned_workouts:
-        saved_workouts.append(item.workout_id)
-
-    return render_template('workouts.html', workouts = workouts, exercises = exercises, saved_workouts = saved_workouts)
+    if (current_user.is_authenticated):
+        owned_workouts = ownsWorkout.query.filter_by(email = current_user.email).with_entities(ownsWorkout.workout_id)
+        saved_workouts = []
+        for item in owned_workouts:
+            saved_workouts.append(item.workout_id)
+        return render_template('workouts.html', workouts = workouts, exercises = exercises, saved_workouts = saved_workouts)
+    else:
+        return render_template('workouts.html', workouts = workouts, exercises = exercises)
 
 @app.route('/classes', methods = ['GET'])
 def show_classes():
     classes = FitnessClass.query.all()
-    fav_classes = hasFavoriteClass.query.filter_by(email = current_user.email)
-    fav_class_list = []
-    for item in fav_classes:
-        fav_class_list.append(item.class_name)
-    return render_template('classes.html', classes = classes, fav_classes = fav_class_list)
+    if (current_user.is_authenticated):
+        fav_classes = hasFavoriteClass.query.filter_by(email = current_user.email)
+        fav_class_list = []
+        for item in fav_classes:
+            fav_class_list.append(item.class_name)
+            return render_template('classes.html', classes = classes, fav_classes = fav_class_list)
+    else:
+        return render_template('classes.html', classes = classes)
 
 @app.route('/create-workout', methods = ['GET', 'POST'])
 @login_required
