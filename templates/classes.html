@@ -32,7 +32,10 @@
 {% for item in classes %}
 <div class="col-sm-4">
     <div class="panel panel-default">
-        <div class="panel-heading-custom1">{{item.name}}
+        <div class="panel-heading-custom1">
+            <a href="{{item.link}}" target="_blank">
+                {{item.name}}
+            </a>
             {% if item.name not in fav_classes %}
             <a href="/add-class/{{item.name}}">
                 <span style="float: right; color: gold;">Favorite This Class</span>
