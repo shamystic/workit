@@ -46,16 +46,12 @@ def show_exercises():
 def show_workouts():
     workouts = Workout.query.all()
     exercises = hasExercise.query.all()
-    owned_workouts = ownsWorkout.query.filter_by(email = current_user.email, favorite = False).with_entities(ownsWorkout.workout_id)
-    made_workouts = ownsWorkout.query.filter_by(email = current_user.email, favorite = True).with_entities(ownsWorkout.workout_id)
-    fav_workouts = []
-    my_workouts = []
+    owned_workouts = ownsWorkout.query.filter_by(email = current_user.email).with_entities(ownsWorkout.workout_id)
+    saved_workouts = []
     for item in owned_workouts:
-        my_workouts.append(item.workout_id)
-    for item in made_workouts:
-        fav_workouts.append(item.workout_id)
+        saved_workouts.append(item.workout_id)
 
-    return render_template('workouts.html', workouts = workouts, exercises = exercises, fav_workouts = fav_workouts, my_workouts = my_workouts)
+    return render_template('workouts.html', workouts = workouts, exercises = exercises, saved_workouts = saved_workouts)
 
 @app.route('/classes', methods = ['GET'])
 def show_classes():
