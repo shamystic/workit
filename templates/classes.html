@@ -32,19 +32,21 @@
 {% for item in classes %}
 <div class="col-sm-4">
     <div class="panel panel-default">
-        <div class="panel-heading-custom1">
-            <a href="{{item.link}}" target="_blank">
+        <div class="panel-heading-custom1" style= "height: 3.4rem; line-height: 3rem;">
+            <a href="{{item.link}}" target="_blank" style="color: inherit;">
                 {{item.name}}
             </a>
             {% if item.name not in fav_classes %}
-            <a href="/add-class/{{item.name}}">
-                <span style="float: right; color: gold;">Favorite This Class</span>
+            <a href="/add-class/{{item.name}}" ">
+                <span style="float: right; color: gold;"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-heart"></span>
+                </button></span>
             </a>
             {% endif %}
         </div>
         <div class="panel-footer"> Location: {{item.location}}</div>
         <div class="panel-footer"> Times: {{item.times}}</div>
         <div class="panel-footer"> Fitness Goals: {{item.goal}}</div>
+        <div class="panel-footer"> {{item.description}}</div>
     </div>
 </div>
 {% endfor %}

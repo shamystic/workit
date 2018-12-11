@@ -104,7 +104,7 @@
   /*border: 1px solid black;*/
   float: left;
   padding-left: 2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0rem;
   position: relative;
 }
 .selections{
