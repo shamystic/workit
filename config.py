@@ -3,7 +3,7 @@ POSTGRES = {
     'pw': 'password',
     'db': 'dfx',
     'host': 'localhost',
-    'port': '5432',
+    'port': '5433',
 }
 
 # SQLALCHEMY_DATABASE_URI = 'postgresql:///dfx'

@@ -7,60 +7,102 @@
 {% endblock %}
 
 {% block content %}
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-<form action="" method=post class="contain">
-    <h2>Register</h2>
+* {
+  box-sizing: border-box;
+}
+.bg-img {
+  /* The image used */
+  background-image: url({{ url_for('static', filename='images/login.jpeg')}});
 
-    <div class="control-group">
-        <div class="controls">
-            <input type="email" id="email" name="email" class="text"
-            placeholder="Enter Email" value="{{ request.form.username }}"
-            required>
+  min-height: 850px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.contain{
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+  margin-left: 30%;
+  margin-right: 40%;
+  width: 30%;
+  border: 6px solid #3A266D;
+  border-radius: 5px;
+  border-style: groove;
+  font-family: Montserrat;
+}
+
+</style>
+
+<div class="bg-img">
+    <form action="" method=post class="contain">
+        <h2>Register</h2>
+
+        <div class="control-group">
+            <div class="controls">
+                <input type="email" id="email" name="email" class="text"
+                placeholder="Enter Email" value="{{ request.form.username }}"
+                required>
+            </div>
         </div>
-    </div>
-    <br>
-    <div class="control-group">
-        <div class="controls">
-            <input type="text" id="name" name="name" class="text"
-            placeholder="Enter Your Name" value="{{ request.form.name }}"
-            required>
+        <br>
+        <div class="control-group">
+            <div class="controls">
+                <input type="text" id="name" name="name" class="text"
+                placeholder="Enter Your Name" value="{{ request.form.name }}"
+                required>
+            </div>
         </div>
-    </div>
-    <br>
-    <div class="control-group">
-        <div class="controls">
-            <input type="password" id="password" name="password" class="text"
-            placeholder="Enter Password" value="{{ request.form.password }}"
-            required>
+        <br>
+        <div class="control-group">
+            <div class="controls">
+                <input type="password" id="password" name="password" class="text"
+                placeholder="Enter Password" value="{{ request.form.password }}"
+                required>
+            </div>
         </div>
-    </div>
-    <h3>Fitness Goal</h3>
-    <div class="control-group">
-        <div class="controls">
-            <input type="radio" name="goal" value="Mind and Body" class="text"> Mind and Body
+        <h3 style="font-family:Montserrat">What's Your Fitness Goal?</h3>
+        <div class="control-group">
+            <div class="controls">
+                <input type="radio" name="goal" value="Mind and Body" class="text"> Mind and Body
+            </div>
         </div>
-    </div>
-    <div class="control-group">
-        <div class="controls">
-            <input type="radio" name="goal" value="Strength and Endurance" class="text"> Strength and Endurance
+        <div class="control-group">
+            <div class="controls">
+                <input type="radio" name="goal" value="Strength and Endurance" class="text"> Strength and Endurance
+            </div>
         </div>
-    </div>
-    <div class="control-group">
-        <div class="controls">
-            <input type="radio" name="goal" value="Weight Loss" class="text"> Weight Loss
+        <div class="control-group">
+            <div class="controls">
+                <input type="radio" name="goal" value="Weight Loss" class="text"> Weight Loss
+            </div>
         </div>
-    </div>
-    <div class="control-group">
-        <div class="controls">
-            <input type="radio" name="goal" value="Aerobics and Balance" class="text"> Aerobics and Balance
+        <div class="control-group">
+            <div class="controls">
+                <input type="radio" name="goal" value="Aerobics and Balance" class="text"> Aerobics and Balance
+            </div>
         </div>
-    </div>
-    <br>
-    <div class="control-group">
-        <div class="controls">
-            <button type="submit" class="submit">Register</button>
+        <br>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="submit" style="width: 100px">Register</button>
+            </div>
         </div>
-    </div>
-    <br>
-</form>
+        <br>
+    </form>
+</div>
 {% endblock %}
