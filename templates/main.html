@@ -1,68 +1,176 @@
 <DOCTYPE html>
 	<html>
 	{% extends "header.html" %}
+	
+	{% block title %}
+		<title>Duke Fitness Exchange</title>
+	{% endblock %}
+
 	{% block content %}
-	<head>
-		<title>Home</title>
-		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/main.css') }}">
-		<link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
-	</head>
-	<h1 style = "text-align: center;font-family: Oswald;"> Find a Workout Tailored for You </h1>
-	<p id = "blurb">College students need weekly aerobic exercise, but it can be hard to figure out and follow through on workout plans with your busy schedule. </p>
-	<p id = "blurb">Workit streamlines your fitness experience by providing you expert-recommended, customized workouts based on your resources and needs. </p>
-	<form action="" method="POST" id = "form">
-		<div class =  "container">
-			<div class = "selection" id = "left">
-				<h3>Type of challenge: </h3>
-				<div class = "test">
-					&emsp;
-					<input type = "checkbox" name = "challenge" value = "circuit"> Workout Circuit
-					<br>
-					&emsp;
-					<input type = "checkbox" name = "challenge" value = "class"> Fitness Class
-				</div>
-			</div>
 
-			<div class = "selection" id = "right">
-				<h3>Equipment Available:</h3>
-				<div class = "test">
-					&emsp;
-					<input type = "checkbox" name = "equipment" value = "body"> None
-					<br>
-					&emsp;
-					<input type = "checkbox" name = "equipment" value = "dumbbels"> Dumbbells
-					<br>
-					&emsp;
-					<input type = "checkbox" name = "equipment" value = "machine"> Machine
-					<br>
-					&emsp;
-					<input type = "checkbox" name = "equipment" value = "cable"> Cable
-				</div>
-			</div>
-			<div class = "selection" id = "center">
-				<h3>Area(s) of focus:</h3>
-				<div class="test">
-					&emsp;
-					<input type = "checkbox" name = "area" value = "upper">
-					Upper Body
-					<br>
 
-					&emsp;
-					<input type = "checkbox" name = "area" value = "lower"> Lower Body
-					<br>
+    <h1 class="w3-jumbo"><b>Duke Fitness Exchange</b></h1>
+        <p id = "blurb" style="max-width:1000px">College students need weekly aerobic exercise, but it can be hard to figure out and follow through on workout plans with your busy schedule. DFX streamlines your fitness experience by providing you expert-recommended, customized workouts based on your resources and needs. </p>
 
-					&emsp;
-					<input type = "checkbox" name = "area" value = "abdominals"> Abdominals
-					<br>
+    <h1 class="w3-xxxlarge w3-text-blue-grey"><b>Reach your fitness goals.</b></h1>
+    <hr style="width:50px;border:5px solid blue-grey" class="w3-round">
+  </div>
 
-					&emsp;
-					<input type = "checkbox" name = "area" value = "cardio"> Cardio
-				</div>
-			</div>
-			<div class = "bottom">
-				<input type = "submit" value = "Submit" class = "submit" >
-			</div>
-		</div>
-	</form>
+
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="static/images/main_cycling.jpg" style="width:50%" alt="">
+      <img src="static/images/main_barre.jpg" style="width:50%" alt="">
+      <img src="static/images/main_kickboxing.jpg" style="width:50%"  alt="">
+    </div>
+
+  <!-- CustomFit Section -->
+  <div class="w3-container w3-padding-32" id="customfit">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Find a CustomFit</h3>
+  <form action="" method="POST" id = "form">
+    <div class =  "container">
+      <div class = "selection" id = "left">
+        <h3>Type of challenge: </h3>
+        <div class = "test">
+          &emsp;
+          <input type = "checkbox" name = "challenge" value = "circuit"> Workout Circuit
+          <br>
+          &emsp;
+          <input type = "checkbox" name = "challenge" value = "class"> Fitness Class
+        </div>
+      </div>
+
+      <div class = "selection" id = "right">
+        <h3>Equipment Available:</h3>
+        <div class = "test">
+          &emsp;
+          <input type = "checkbox" name = "equipment" value = "body"> None
+          <br>
+          &emsp;
+          <input type = "checkbox" name = "equipment" value = "dumbbels"> Dumbbells
+          <br>
+          &emsp;
+          <input type = "checkbox" name = "equipment" value = "machine"> Full Gym
+          <br>
+          &emsp;
+          <input type = "checkbox" name = "equipment" value = "cable"> Cable
+        </div>
+      </div>
+      <div class = "selection" id = "center">
+        <h3>Area(s) of focus:</h3>
+        <div class="test">
+          &emsp;
+          <input type = "checkbox" name = "area" value = "upper">
+          Upper Body
+          <br>
+
+          &emsp;
+          <input type = "checkbox" name = "area" value = "lower"> Lower Body
+          <br>
+
+          &emsp;
+          <input type = "checkbox" name = "area" value = "abdominals"> Abdominals
+          <br>
+
+          &emsp;
+          <input type = "checkbox" name = "area" value = "cardio"> Cardio
+        </div>
+      </div>
+      <div class = "bottom">
+        <input type = "submit" value = "Submit" class = "submit" >
+      </div>
+    </div>
+  </form>
+  </div>
+
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="w3-container" id="services" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-blue-grey"><b>Enhance your workout routine through crowdsourcing.</b></h1>
+    <hr style="width:50px;border:5px solid blue-grey" class="w3-round">
+    <p>We are a interior design service that focus on what's best for your home and what's best for you!</p>
+    <p style="max-width:1000px">Put stuff here
+    </p>
+  </div>
+
+  <!-- Designers -->
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-blue-grey"><b>Find the perfect class for you.</b></h1>
+    <hr style="width:50px;border:5px solid blue-grey" class="w3-round">
+    <p>The best team in the world.</p>
+    <p style="max-width:1000px">Put stuff here
+    </p>
+    <p><b>Our designers are thoughtfully chosen</b>:</p>
+  </div>
+
+  <!-- The Team -->
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="static/images/main_cycling.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>Class 1</h3>
+          <p class="w3-opacity">CEO & Founder</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="static/images/main_cycling.jpg" alt="Jane" style="width:100%">
+        <div class="w3-container">
+          <h3>Class 2</h3>
+          <p class="w3-opacity">Class 2 details</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="static/images/main_cycling.jpg" alt="Mike" style="width:100%">
+        <div class="w3-container">
+          <h3>Class 3</h3>
+          <p class="w3-opacity">Architect</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-blue-grey"><b>Contact.</b></h1>
+    <hr style="width:50px;border:5px solid blue-grey" class="w3-round">
+    <p>Do you want us to style your home? Fill out the form and fill me in with the details :) We love meeting new people!</p>
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" name="Name" requiblue-grey>
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" name="Email" requiblue-grey>
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" type="text" name="Message" requiblue-grey>
+      </div>
+      <button type="submit" class="w3-button w3-block w3-padding-large w3-blue-grey w3-margin-bottom">Send Message</button>
+    </form>
+  </div>
+<!-- End page content -->
+</div>
+
+
 	{% endblock %}
 	</html>

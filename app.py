@@ -39,8 +39,9 @@ def show_workouts():
     workouts = Workout.query.all()
     exercises = hasExercise.query.all()
     return render_template('workouts.html', workouts = workouts, exercises = exercises)
+
 @app.route('/saved-workouts', methods = ['GET'])
-def saved__workouts():
+def saved_workouts():
     workouts = ownsWorkout.query.filter_by(email = current_user.email).all()
     exercises = hasExercise.query.all()
     return render_template('saved-workouts.html', workouts = workouts, exercises = exercises)

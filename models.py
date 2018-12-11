@@ -26,6 +26,7 @@ class Person(db.Model):
 class Exercise(db.Model):
     name = db.Column(db.String(120), primary_key = True)
     body_part = db.Column(db.String(120))
+    equipment = db.Column(db.String(120))
 
     def __repr__(self):
         return "Exercise Name: {}".format(self.name)

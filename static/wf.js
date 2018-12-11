@@ -4,7 +4,9 @@ var removals = document.getElementsByClassName('remove');
 
 function buttonpush(butid, butval){
   //alert('button pressed');
-  var div =       document.getElementById(butid +"-text");
+  var div = document.getElementById(butid +"-text");
+  var disclaimer = document.getElementById("disc");
+  disclaimer.style.visibilty = "visible";
   
 var newbutval = butval.replace(/\s/g,''); 
   //alert(newbutval);
@@ -17,6 +19,16 @@ var newbutval = butval.replace(/\s/g,'');
     newbut.id = newbutid;
   div.appendChild(newbut);
     newbut.className = 'remove';
+    var x = document.createElement("INPUT");
+   x.className = 'hide';
+    
+ x.type = "checkbox";
+    x.value= butval; 
+    x.name = butid;
+    x.id = newbutid +"-check";
+    x.checked = true;
+    
+    document.getElementById("form").appendChild(x);
     
 document.getElementById(newbutid).addEventListener("click", function(){
     removebuttons(newbutid);
@@ -29,6 +41,8 @@ function removebuttons(butid){
  
   var nobut = document.getElementById(butid);
  nobut.parentNode.removeChild(nobut);
+ // var nocheck = document.getElementById(butid +"-check");
+ //  nocheck.parentNode.removeChild(nocheck);
  
   
   
