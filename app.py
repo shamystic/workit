@@ -32,7 +32,7 @@ def index():
     #return render_template('main.html')
 #>>>>>>> 26f3bc12af41e286bce371f649b3eb2f8e9f655d
 #=======
-    return render_template('mainTemplate.html')
+    return render_template('main.html')
 #>>>>>>> dec39a1f8c1175a71ed646be8eb3497d401f64be
 
 @app.route('/equipment', methods = ['GET'])
