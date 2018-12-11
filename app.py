@@ -26,9 +26,12 @@ def index():
         return render_template('mainTemplate.html')
     challenge = request.form['challenge']
     focus = request.form['focus']
+    print("FOCUS", focus)
     if (challenge == 'workout'):
         workouts = Workout.query.filter_by(workout_type = focus)
-        return render_template('workouts.html', workouts = workouts)
+        exercises = hasExercise.query.all()
+        print("WORKOUT", workouts)
+        return render_template('workouts.html', workouts = workouts, exercises = exercises)
     elif (challenge == 'class'):
         classes = FitnessClass.query.filter_by(goal = focus)
         return render_template('classes.html', classes = classes)
