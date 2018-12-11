@@ -1,7 +1,7 @@
 .pict{
   width:100%;
   position: relative;
-  height: 90vh;
+  height: 100vh;
 }
 
 #pic{
@@ -26,7 +26,7 @@
     top: 8rem; 
 /*   left: 0px; */
    background-color: black;
-  opacity: 0.75;
+  opacity: 0.85;
    color: white;
    height: 50%;
 }
@@ -36,12 +36,12 @@
   font-size: 1rem;
 }
 .control-group{
-  padding: 0.7rem;
-  opacity: 1;
+  padding: 0.4rem;
 }
 .exercise-container{
   width: 100%;
  padding-left: 2rem;
+ padding-bottom: 2rem;
 }
 .body-container{
   width: 16%;
@@ -108,11 +108,12 @@
   border: 2px black solid;
   width: 20%;
   float: right;
-  border-radius: 0.4rem;
+  border-radius: 0.1rem;
   text-align: center;
-  width: 72%;
+  width: 80%;
   float: right;
   visibility: hidden;
+  font-family:Verdana,sans-serif;
 }
 
 .remove{
@@ -139,4 +140,8 @@ float: left;
 #disc{
   text-align: center; 
   visibility: hidden;
+}
+input[type="radio"] {
+  margin-top: -1px;
+  vertical-align: middle;
 }

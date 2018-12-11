@@ -1,73 +1,100 @@
-{% extends "header.html" %}
-
-{% block head %}
-<link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
-<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/exercises.css') }}">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-{% endblock %}
-
-{% block content %}
-    <form action="" method=post id = "form" >
-        <div class = "pict">
-            <div class = "contain" style="height: 23rem;">
-            <h1 style="padding: 1rem;">Create A Workout:</h1>
-            <div class="control-group">
-                <div class="controls" style="padding-bottom: 1.4rem;">
-                    <input type="text" id="name" name="name" class="text"
-                    placeholder="Enter Name of Workout" required>
-                </div>
+<DOCTYPE html>
+    <html>
+    
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/exercises.css') }}">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    </head>
+    <div class="w3-top" style = "z-index: 2;">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>CampusFitness</b></a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#workouts" class="w3-bar-item w3-button">Workouts</a>
+      <a href="#customfit" class="w3-bar-item w3-button">CustomFit</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+    <header>
+        <form action="" method=post id = "form"  >
+    <div class = "pict">
+  <div class = "contain" style="height: 26rem;">
+        <h1 style="padding: 1rem;">Create A Workout:</h1>
+        <div class="control-group">
+            <div class="controls" style="padding-bottom: 1rem;">
+                <input style = "font-size: 1.5rem;" type="text" id="name" name="name" class="text"
+                placeholder="Enter Name of Workout" required >
+            </div>
+        </div>
+        <div class="control-group" >
+            <div class="controls" >
+                <h3 >Select Type Of Workout:</h3>
+            </div>
+        </div>
+        <div class="control-group" >
+            <div class="controls" >
+                <input type="radio" name="workout_type" value="Mind and Body" class="text"> Mind and Body
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls" >
+                <input type="radio" name="workout_type" value="Strength and Endurance" class="text"> <span >Strength and Endurance</span>
+            </div>
+        </div>
+        <div class="control-group" >
+            <div class="controls">
+                <input type="radio" name="workout_type" value="Weight Loss" class="text"> Weight Loss
             </div>
 
-            <div class="control-group" style="opacity: 1;">
-                <div class="controls" >
-                    <input type="radio" name="workout_type" value="Mind and Body" class="text"> Mind and Body
-                </div>
-                <div class = "contain" style="z-index: 1; font-size: 1.4rem; color: white; height: 2.4rem;top: 10rem; ">
-                    Select Exercises Below:
-                </div>
-                <img src="{{ url_for('static', filename='images/groupwerk.jpg') }}" id = "pic">
-            </div>
+        </div>
+    </div> 
+    <div class = "contain" style="z-index: 1; font-size: 2rem; color: white; height: 3rem;top: 14rem; letter-spacing:1px;">
+    Scroll Down To Select Exercises
+</div>
+<img src="{{ url_for('static', filename='images/groupwerk.jpg') }}" id = "pic">
+</div>
 
-        <p id = "disc" > Click on an exercise to remove it.</p>
+</header>
+<p id = "disc" > Click on an exercise to remove it.</p>
 
-        <div class = "exercise-container" style= " border: 2px solid black;">
-            {% for trifecta in body_parts| batch(3, '&nbsp;')%}
-            <div class = "three-body-parts" style = "display: inline-block;  width: 100%; border-right: 2px solid black;">
-                {% for item in trifecta %}
-                <div class = "body-part">
-                    <h2>{{item.body_part}}</h2>
-                    <div class = "container">
-                        <div class="dropdown">
-                            <button class="dropbtn">Select</button>
+    
+        
+    <div class = "exercise-container" style= " border: 2px solid black;">
+        {% for trifecta in body_parts| batch(3, '&nbsp;')%}
+        <div class = "three-body-parts" style = "font-family:Verdana,sans-serif; display: inline-block;  width: 100%; border-right: 2px solid black;">
+            {% for item in trifecta %}
+            <div class = "body-part">
+            <h2 style= "font-family:Verdana,sans-serif; letter-spacing: 2px;">{{item.body_part}}</h2>
+                <div class = "container">
+                    <div class="dropdown">
+                        <button class="dropbtn">Select</button>
                             <div class="dropdown-content">
-                                {% for exercise in exercises %}
-                                {% if exercise.body_part == item.body_part %}
+                            {% for exercise in exercises %}       
+                            {% if exercise.body_part == item.body_part %}
                                 <button type = "button" class = "buttons" value = "{{exercise.name}}" id = "{{item.body_part}}"> {{exercise.name}} </button>
-                                {% endif %}
-                                {% endfor %}
+                            {% endif %}
+                            {% endfor %}
                             </div>
-                        </div>
-                        <div class = "selections" id = "{{item.body_part}}-text">
-
-                        </div>
                     </div>
+                <div class = "selections" id = "{{item.body_part}}-text">
+     
                 </div>
-                {% endfor %}
+                </div>
             </div>
             {% endfor %}
-        </div>
-        {% endfor %}
     </div>
-
-    <div class="submit-btn" style="padding-top: 0.5rem; display: inline-block; padding-bottom: 0.8rem;">
-        <div class="controls" >
-            <button type="submit" class="submit" style = "font-size: 3rem; background-color: black; color: white; border-radius: 0.5rem; ">Create Workout</button>
-        </div>
+         {% endfor %}
     </div>
-</div>
-<br>
-
-</form>
+    
+        <div class="submit-btn" style="padding-top: 0.5rem; display: inline-block; padding-bottom: 0.8rem;">
+            <div class="controls" >
+                <button type="submit" class="submit" style = "font-size: 2rem; background-color: black; color: white; border-radius: 0.5rem; ">Create Workout</button>
+            </div>
+        </div>
+        <br>
+    
+    </form>
 <script src={{ url_for('static', filename='wf.js') }}></script>
-
-{% endblock %}
+    </html>
