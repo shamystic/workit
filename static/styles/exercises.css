@@ -1,7 +1,7 @@
 .pict{
   width:100%;
   position: relative;
-  height: 80vh;
+  height: 90vh;
 }
 
 #pic{
@@ -112,6 +112,7 @@
   text-align: center;
   width: 72%;
   float: right;
+  visibility: hidden;
 }
 
 .remove{

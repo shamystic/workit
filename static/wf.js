@@ -5,6 +5,7 @@ var removals = document.getElementsByClassName('remove');
 function buttonpush(butid, butval){
   //alert('button pressed');
   var div = document.getElementById(butid +"-text");
+  div.style.visibility = "visible";
   var disclaimer = document.getElementById("disc");
   disclaimer.style.visibilty = "visible";
   
@@ -31,16 +32,25 @@ var newbutval = butval.replace(/\s/g,'');
     document.getElementById("form").appendChild(x);
     
 document.getElementById(newbutid).addEventListener("click", function(){
-    removebuttons(newbutid);
+    removebuttons(newbutid, butid +"-text");
 });
   }
 }
 
-function removebuttons(butid){
+function removebuttons(butid, divid){
   divSet.delete(butid);
- 
+ div = document.getElementById(divid);
+
   var nobut = document.getElementById(butid);
  nobut.parentNode.removeChild(nobut);
+
+ 
+var result = div.innerHTML.trim();
+//result == "" ? console.log(true) : console.log(false);
+ if (result == ""){
+  //div.style.border = "3px solid red";
+  div.style.visibility = "hidden";
+ }
  // var nocheck = document.getElementById(butid +"-check");
  //  nocheck.parentNode.removeChild(nocheck);
  
