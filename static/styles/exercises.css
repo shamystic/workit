@@ -62,9 +62,10 @@
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
-  float: left;
+    position: absolute;
+    top: 10px;
+    /*display: inline-block;*/
+  /*float: left;*/
   width: 20%;
 }
 
@@ -103,6 +104,8 @@
   /*border: 1px solid black;*/
   float: left;
   padding-left: 2rem;
+  padding-bottom: 4rem;
+  position: relative;
 }
 .selections{
   border: 2px black solid;
