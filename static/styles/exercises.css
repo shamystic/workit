@@ -100,7 +100,7 @@
 .body-part{
   text-align: center;
   width: 33%;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   float: left;
   padding-left: 2rem;
 }
@@ -134,4 +134,8 @@ float: left;
   }
 .submit:hover{
   cursor: pointer;
+}
+#disc{
+  text-align: center; 
+  visibility: hidden;
 }

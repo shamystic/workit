@@ -5,6 +5,8 @@ var removals = document.getElementsByClassName('remove');
 function buttonpush(butid, butval){
   //alert('button pressed');
   var div = document.getElementById(butid +"-text");
+  var disclaimer = document.getElementById("disc");
+  disclaimer.style.visibilty = "visible";
   
 var newbutval = butval.replace(/\s/g,''); 
   //alert(newbutval);

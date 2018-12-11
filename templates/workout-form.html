@@ -53,13 +53,15 @@
 </div>
 
 </header>
-<p style = "text-align: center;"> Click on an exercise to remove it.</p>
+<p id = "disc" > Click on an exercise to remove it.</p>
 
     
         
     <div class = "exercise-container">
-        {% for item in body_parts %}
-        <div class = "body-part">
+        {% for trifecta in body_parts| batch(3, '&nbsp;')%}
+        <div class = "three-body-parts" style = "display: inline-block; border: 2px solid black; width: 100%;">
+            {% for item in trifecta %}
+            <div class = "body-part">
             <h2>{{item.body_part}}</h2>
                 <div class = "container">
                     <div class="dropdown">
@@ -76,6 +78,8 @@
      
                 </div>
                 </div>
+            </div>
+            {% endfor %}
     </div>
          {% endfor %}
     </div>
