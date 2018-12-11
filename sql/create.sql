@@ -38,7 +38,8 @@ CREATE TABLE has_exercise (
 CREATE TABLE owns_workout (
     email VARCHAR (120) REFERENCES Person(email),
     workout_id VARCHAR(120) REFERENCES Workout(workout_id),
-    PRIMARY KEY(email, workout_id)
+    favorite BOOLEAN,
+    PRIMARY KEY(email, workout_id, favorite)
 );
 
 CREATE TABLE has_favorite_class (

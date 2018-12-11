@@ -28,11 +28,11 @@ def index():
 
 @app.route('/equipment', methods = ['GET'])
 def show_equipment():
-	return render_template('equipment.html', equipment = Equipment.query.with_entities(Equipment.name))
+    return render_template('equipment.html', equipment = Equipment.query.with_entities(Equipment.name))
 
 @app.route('/exercises', methods = ['GET'])
 def show_exercises():
-	return render_template('exercises.html', exercises = Exercise.query.all())
+    return render_template('exercises.html', exercises = Exercise.query.all())
 
 @app.route('/workouts', methods = ['GET'])
 def show_workouts():
@@ -56,7 +56,7 @@ def create_workout():
     workout = Workout(workout_id = workout_name, workout_type = workout_type)
     db.session.add(workout)
     db.session.commit()
-    own = ownsWorkout(email = current_user.email, workout_id = workout_name)
+    own = ownsWorkout(email = current_user.email, workout_id = workout_name, favorite = False)
     db.session.add(own)
     db.session.commit()
     print(request.form)
@@ -68,7 +68,7 @@ def create_workout():
 
 @app.route('/add-favorite/<string:workout_name>', methods = ['GET', 'POST'])
 def add_favorite(workout_name):
-    temp = ownsWorkout(email = current_user.email, workout_id = workout_name)
+    temp = ownsWorkout(email = current_user.email, workout_id = workout_name, favorite = True)
     db.session.add(temp)
     db.session.commit()
     return redirect(url_for('show_users'))
@@ -86,7 +86,7 @@ def show_users():
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return render_template('login.html')
+        return render_template('loginEdit.html')
     email = request.form['email']
     password = request.form['password']
     user = Person.query.filter_by(email = email, password = password).first()
