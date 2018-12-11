@@ -26,12 +26,9 @@
     text-align: center;
 }
 </style>
+
 <h1 style="text-align: center;">All Exercises</h1>
 {% for item in exercises %}
-{% set list1 = item.name.split(' ') %}
-
-{% set my_string = list1|join("-") %}
-
 <div class="col-md-4">
     <div class="panel panel-default">
         <div class="panel-heading-custom1" style="text-align: center;">
@@ -41,9 +38,7 @@
         </div>
         <div class="panel-footer">Related Body Part: {{item.body_part}}</div>
         <div class="panel-footer">Required Equipment: {{item.equipment}}</div>
-
     </div>
 </div>
-
 {% endfor %}
 {% endblock %}
