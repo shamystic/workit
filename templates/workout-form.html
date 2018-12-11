@@ -5,18 +5,26 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/exercises.css') }}">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
     </head>
-    <div class="w3-top" style = "z-index: 2;">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>CampusFitness</b></a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#workouts" class="w3-bar-item w3-button">Workouts</a>
-      <a href="#customfit" class="w3-bar-item w3-button">CustomFit</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+
+<body>
+    
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card" >
+        <a href="/" class="w3-bar-item w3-button"><b>CampusFitness</b></a>
+        <div class="w3-right w3-hide-small" >
+            <a href="/workouts" class="w3-bar-item w3-button">Workouts</a>
+            <a href="/exercises" class="w3-bar-item w3-button">Exercises</a>
+            <a href="/users" class="w3-bar-item w3-button">Users</a>
+            <a href="/classes" class="w3-bar-item w3-button">Classes</a>
+            <a href="/login" class="w3-bar-item w3-button">Login</a>
+    
     </div>
-  </div>
 </div>
+
     <header>
         <form action="" method=post id = "form"  >
     <div class = "pict">
@@ -65,9 +73,11 @@
         {% for trifecta in body_parts| batch(3, '&nbsp;')%}
         <div class = "three-body-parts" style = "font-family:Verdana,sans-serif; display: inline-block;  width: 100%; border-right: 2px solid black;">
             {% for item in trifecta %}
-            <div class = "body-part">
-            <h2 style= "font-family:Verdana,sans-serif; letter-spacing: 2px;">{{item.body_part}}</h2>
-                <div class = "container">
+            <div class = "body-part" >
+            
+            <h2 style= "font-family:Verdana,sans-serif; letter-spacing: 2px;">{{item.body_part}}
+            </h2>
+                
                     <div class="dropdown">
                         <button class="dropbtn">Select</button>
                             <div class="dropdown-content">
@@ -80,7 +90,7 @@
                     </div>
                 <div class = "selections" id = "{{item.body_part}}-text">
      
-                </div>
+                
                 </div>
             </div>
             {% endfor %}
