@@ -40,7 +40,8 @@ def index():
 
 @app.route('/exercises', methods = ['GET'])
 def show_exercises():
-    return render_template('exercises.html', exercises = Exercise.query.all())
+    exercises = Exercise.query.all()
+    return render_template('exercises.html', exercises = exercises)
 
 @app.route('/workouts', methods = ['GET'])
 def show_workouts():
@@ -49,11 +50,11 @@ def show_workouts():
     owned_workouts = ownsWorkout.query.filter_by(favorite = False).with_entities(ownsWorkout.workout_id)
     workoutsls = []
     for item in owned_workouts:
-        print("ITEM", item)
-        print("DICT", type(item.workout_id))
+        # print("ITEM", item)
+        # print("DICT", type(item.workout_id))
         workoutsls.append(item.workout_id)
-    print("TYPE",type(owned_workouts))
-    print(workoutsls)
+    # print("TYPE",type(owned_workouts))
+    # print(workoutsls)
     return render_template('workouts.html', workouts = workouts, exercises = exercises, owned_workouts = workoutsls)
 
 @app.route('/classes', methods = ['GET'])
@@ -76,7 +77,7 @@ def create_workout():
     db.session.add(own)
     db.session.commit()
     for item in request.form.getlist('workout'):
-        print(item)
+        # print(item)
         temp = hasExercise(workout_id = workout_name, exercise_id = item)
         db.session.add(temp)
         db.session.commit()
@@ -146,5 +147,3 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
-
-
