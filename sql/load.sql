@@ -40,10 +40,10 @@ INSERT INTO has_exercise VALUES
     ('Yoga', 'Muscle Up');
 
 INSERT INTO owns_workout VALUES
-    ('hemanth.yakkali@duke.edu','Hemanth Chest', True),
-    ('hemanth.yakkali@duke.edu', 'Hemanth BiTri', True),
-    ('hemanth.yakkali@duke.edu', 'Yoga', False),
-    ('hemanth.yakkali@duke.edu', 'Cardio', False),
+    ('hemanth.yakkali@duke.edu','Hemanth Chest', False),
+    ('hemanth.yakkali@duke.edu', 'Hemanth BiTri', False),
+    ('hemanth.yakkali@duke.edu', 'Yoga', True),
+    ('hemanth.yakkali@duke.edu', 'Cardio', True),
     ('shamikh.hossain@duke.edu', 'Cardio', True);
 
 INSERT INTO has_favorite_class VALUES
