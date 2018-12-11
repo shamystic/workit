@@ -20,7 +20,7 @@
         {% if item.workout_id|length > 0 %}
         <div  style = "float: left; width: 33%; padding-left: 0.5rem;padding-top: 1rem; display: inline-block; ">
             <div class="panel panel-primary" style="border: none;">
-                <div class="panel-heading" style="background-color: black; height: 3.5rem; line-height: 15px; font-size: 16px;position: relative;"><span style="color: #BAA9EA;">{{item.workout_id}} </span>
+                <div class="panel-heading" style="background-color: black; height: 3.5rem; line-height: 15px; font-size: 16px;position: relative; border-radius: 0.5rem;"><span style="color: #BAA9EA;">{{item.workout_id}} </span>
 
                     {% if item.workout_id not in saved_workouts %}
                     <a href="/add-favorite/{{item.workout_id}}">
