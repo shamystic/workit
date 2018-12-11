@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from add_equipment import equipment
 from get_workouts import workouts
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
+import json
 
 # do current_user to get logged in user
 # do current_user.email to get current email
@@ -47,7 +48,15 @@ def show_exercises():
 def show_workouts():
     workouts = Workout.query.all()
     exercises = hasExercise.query.all()
-    return render_template('workouts.html', workouts = workouts, exercises = exercises)
+    owned_workouts = ownsWorkout.query.filter_by(favorite = False).with_entities(ownsWorkout.workout_id)
+    workoutsls = []
+    for item in owned_workouts:
+        print("ITEM", item)
+        print("DICT", type(item.workout_id))
+        workoutsls.append(item.workout_id)
+    print("TYPE",type(owned_workouts))
+    print(workoutsls)
+    return render_template('workouts.html', workouts = workouts, exercises = exercises, workoutsls = owned_workouts)
 
 @app.route('/classes', methods = ['GET'])
 def show_classes():
@@ -68,10 +77,10 @@ def create_workout():
     own = ownsWorkout(email = current_user.email, workout_id = workout_name, favorite = False)
     db.session.add(own)
     db.session.commit()
-<<<<<<< HEAD
+# <<<<<<< HEAD
     print("REQUEST", request.form)
-=======
->>>>>>> 40c0f3ca159a02e2994ad5e432a0917f81bb55ff
+# =======
+# >>>>>>> 40c0f3ca159a02e2994ad5e432a0917f81bb55ff
     for item in request.form.getlist('workout'):
         print(item)
         temp = hasExercise(workout_id = workout_name, exercise_id = item)

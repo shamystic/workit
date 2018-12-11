@@ -1,41 +1,41 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
 {% extends "header.html" %}
+
+{% block head %}
+<title>Workouts</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{% endblock %}
+
 {% block content %}
-<head>
-    <title>Workouts</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-</head>
 <body>
-    <h1 class="w3-jumbo"><b>All Workouts</b></h1>
+    <h1> All Workouts</h1>
     {% for item in workouts|unique %}
-        <div class="col-md-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">{{item.workout_id}}</div>
+        <div class="col-md-4" >
+            <div class="panel panel-primary" >
+                <div class="panel-heading"><span>{{item.workout_id}} </span> 
+                    {% if item.workout_id in owned_workouts %}
+                    <span style="float: right; color: white;">Favorite This Workout</span>
+                    {% endif %}
+                </div>
                 <div class="panel-footer">Workout Type: {{item.workout_type}}</div>
+
                 {% for exercise in exercises %}
                     {% if exercise.workout_id == item.workout_id %}
-                    {% set list1 = exercise.exercise_id.split(' ') %}
+                        {% set list1 = exercise.exercise_id.split(' ') %}
         
-                    {% set my_string = list1|join("-") %}
-                    <div class="panel-footer">
-                        <a href="https://www.bodybuilding.com/exercises/{{my_string}}" target= "_blank">
-                            {{exercise.exercise_id}}
-                        </a>
-                    </div>
+                        {% set my_string = list1|join("-") %}
+                        <div class="panel-footer">
+                            <a href="https://www.bodybuilding.com/exercises/{{my_string}}" target= "_blank">
+                        {{exercise.exercise_id}}
+                            </a>          
+                        </div>
                     {% endif %}
 
                 {% endfor %}
             </div>
         </div>
-        <a href="/add-favorite/{{item.workout_id}}"><button type="button">Favorite this workout</button></a>
-        <br>
-        <br>
-        <br>
+        <!-- <a href="/add-favorite/{{item.workout_id}}"><button type="button">Favorite this workout</button></a> -->
+        
     {% endfor %}
 </body>
 {% endblock %}
