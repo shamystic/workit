@@ -75,16 +75,12 @@ def create_workout():
     own = ownsWorkout(email = current_user.email, workout_id = workout_name, favorite = False)
     db.session.add(own)
     db.session.commit()
-# <<<<<<< HEAD
-    print("REQUEST", request.form)
-# =======
-# >>>>>>> 40c0f3ca159a02e2994ad5e432a0917f81bb55ff
     for item in request.form.getlist('workout'):
         print(item)
         temp = hasExercise(workout_id = workout_name, exercise_id = item)
         db.session.add(temp)
         db.session.commit()
-    return redirect(url_for('create_workout'))
+    return redirect(url_for('saved_workouts'))
 
 @app.route('/add-favorite/<string:workout_name>', methods = ['GET', 'POST'])
 @login_required
@@ -150,3 +146,5 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
+
+

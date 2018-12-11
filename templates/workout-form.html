@@ -1,34 +1,37 @@
 <DOCTYPE html>
     <html>
-    
+
     <head>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/exercises.css') }}">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    
+
     </head>
 
 <body>
-    
+
     <div class="w3-bar w3-white w3-wide w3-padding w3-card" >
         <a href="/" class="w3-bar-item w3-button"><b>CampusFitness</b></a>
         <div class="w3-right w3-hide-small" >
             <a href="/workouts" class="w3-bar-item w3-button">Workouts</a>
             <a href="/exercises" class="w3-bar-item w3-button">Exercises</a>
-            <a href="/users" class="w3-bar-item w3-button">Users</a>
             <a href="/classes" class="w3-bar-item w3-button">Classes</a>
-            <a href="/login" class="w3-bar-item w3-button">Login</a>
-    
+            {% if current_user.is_authenticated %}
+                <a href="/saved-workouts" class="w3-bar-item w3-button">My Workouts</a>
+                <a href="/logout" class="w3-bar-item w3-button">Logout</a>
+            {% else %}
+                <a href="/login" class="w3-bar-item w3-button">Login</a>
+            {% endif %}
     </div>
 </div>
 
     <header>
         <form action="" method=post id = "form"  >
     <div class = "pict">
-  <div class = "contain" style="height: 26rem;">
+  <div class = "contain" style="height: 28rem;">
         <h1 style="padding: 1rem;">Create A Workout:</h1>
         <div class="control-group">
             <div class="controls" style="padding-bottom: 1rem;">
@@ -55,9 +58,13 @@
             <div class="controls">
                 <input type="radio" name="workout_type" value="Weight Loss" class="text"> Weight Loss
             </div>
-
         </div>
-    </div> 
+        <div class="control-group" >
+            <div class="controls">
+                <input type="radio" name="workout_type" value="Aerobics and Balance" class="text"> Aerobics and Balance
+            </div>
+        </div>
+    </div>
     <div class = "contain" style="z-index: 1; font-size: 2rem; color: white; height: 3rem;top: 14rem; letter-spacing:1px;">
     Scroll Down To Select Exercises
 </div>
@@ -67,21 +74,21 @@
 </header>
 <p id = "disc" > Click on an exercise to remove it.</p>
 
-    
-        
+
+
     <div class = "exercise-container" style= " border: 2px solid black;">
         {% for trifecta in body_parts| batch(3, '&nbsp;')%}
         <div class = "three-body-parts" style = "font-family:Verdana,sans-serif; display: inline-block;  width: 100%; border-right: 2px solid black;">
             {% for item in trifecta %}
             <div class = "body-part" >
-            
+
             <h2 style= "font-family:Verdana,sans-serif; letter-spacing: 2px;">{{item.body_part}}
             </h2>
-                
+
                     <div class="dropdown">
                         <button class="dropbtn">Select</button>
                             <div class="dropdown-content">
-                            {% for exercise in exercises %}       
+                            {% for exercise in exercises %}
                             {% if exercise.body_part == item.body_part %}
                                 <button type = "button" class = "buttons" value = "{{exercise.name}}" id = "{{item.body_part}}"> {{exercise.name}} </button>
                             {% endif %}
@@ -89,22 +96,22 @@
                             </div>
                     </div>
                 <div class = "selections" id = "{{item.body_part}}-text">
-     
-                
+
+
                 </div>
             </div>
             {% endfor %}
     </div>
          {% endfor %}
     </div>
-    
+
         <div class="submit-btn" style="padding-top: 0.5rem; display: inline-block; padding-bottom: 0.8rem;">
             <div class="controls" >
                 <button type="submit" class="submit" style = "font-size: 2rem; background-color: black; color: white; border-radius: 0.5rem; ">Create Workout</button>
             </div>
         </div>
         <br>
-    
+
     </form>
 <script src={{ url_for('static', filename='wf.js') }}></script>
     </html>
