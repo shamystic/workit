@@ -8,11 +8,29 @@
 
 {% block content %}
 <body>
+<style>
+.panel-default > .panel-heading-custom1{
+  font-size: 16px;
+  background-color: #000000;
+  color: #afeeee;
+  text-align: center;
+}
+
+.panel-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  text-align: center;
+}
+</style>
+
     <h1>Fitness Classes</h1>
     {% for item in classes %}
             <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">{{item.name}}</div>
+                <div class="panel panel-default">
+                    <div class="panel-heading-custom1">{{item.name}}</div>
                     <div class="panel-footer"> Location: {{item.location}}</div>
                     <div class="panel-footer"> Times: {{item.times}}</div>
                     <div class="panel-footer"> Fitness Goals: {{item.goal}}</div>
