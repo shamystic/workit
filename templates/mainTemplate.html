@@ -1,187 +1,148 @@
-<!DOCTYPE html>
-<html>
-<title>CampusFitness</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/main.css') }}">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body>
+{% extends "header.html" %}
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>CampusFitness</b></a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#workouts" class="w3-bar-item w3-button">Workouts</a>
-      <a href="#customfit" class="w3-bar-item w3-button">CustomFit</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-    </div>
-  </div>
-</div>
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block content %}
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src="{{ url_for('static', filename='images/main_boxjumps.jpg') }}" alt="Gym" width="1500" height="800">
-  <!--<img src="{{ url_for('static', filename='images/main_medballs.jpg') }}" alt="Gym"> -->
-  <div class="w3-display-middle w3-margin-top w3-center">
-      <a href="/create-workout">
-          <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><span class="w3-hide-small w3-text-light-grey">Create a Workout</span> </h1>
-      </a>
-  </div>
+    <img class="w3-image" src="{{ url_for('static', filename='images/main_boxjumps.jpg') }}" alt="Gym" width="1500" height="800">
+    <div class="w3-display-middle w3-margin-top w3-center">
+        <a href="/create-workout">
+            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><span class="w3-hide-small w3-text-light-grey">Create a Workout</span> </h1>
+        </a>
+    </div>
 </header>
 
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px;">
 
-  <!-- Project Section -->
-  <div class="w3-container w3-padding-32" id="workouts">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Classes and Workouts</h3>
-  </div>
+    <!-- Project Section -->
+    <div class="w3-container w3-padding-32" id="workouts">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Classes and Workouts</h3>
+    </div>
 
-  <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Cycling</div>
-        <a href="">
-        <img src="{{ url_for('static', filename='images/main_cycling.jpg') }}" alt="Cycling" style="width:100%; height:auto;">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Barre</div>
-        <img src="{{ url_for('static', filename='images/main_barre.jpg') }}" alt="Barre" style="width:100%; height:185px;">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Muscle Pump</div>
-        <img src="{{ url_for('static', filename='images/main_musclepump.jpg') }}" alt="MusclePump" style="width:100%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Kickboxing</div>
-        <img src="{{ url_for('static', filename='images/main_kickboxing.jpg') }}" alt="Boxing" style="width:100%;height: 185px;">
-      </div>
-    </div>
-  </div>
-
-  <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Leg Day</div>
-        <img src="/w3images/house2.jpg" alt="House" style="width:99%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Biceps/Triceps</div>
-        <img src="/w3images/house5.jpg" alt="House" style="width:99%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Ab Burn</div>
-        <img src="/w3images/house4.jpg" alt="House" style="width:99%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Chest</div>
-        <img src="/w3images/house3.jpg" alt="House" style="width:99%">
-      </div>
-    </div>
-  </div>
-
-  <!-- CustomFit Section -->
-  <div class="w3-container w3-padding-32" id="customfit">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Find a CustomFit</h3>
-  <form action="" method="POST" id = "form">
-    <div class =  "container">
-      <div class = "selection" id = "left">
-        <h3>Type of challenge: </h3>
-        <div class = "test">
-          &emsp;
-          <input type = "checkbox" name = "challenge" value = "circuit"> Workout Circuit
-          <br>
-          &emsp;
-          <input type = "checkbox" name = "challenge" value = "class"> Fitness Class
+    <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Cycling</div>
+                <a href="">
+                    <img src="{{ url_for('static', filename='images/main_cycling.jpg') }}" alt="Cycling" style="width:100%; height:auto;">
+                </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Barre</div>
+                    <img src="{{ url_for('static', filename='images/main_barre.jpg') }}" alt="Barre" style="width:100%; height:185px;">
+                </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Muscle Pump</div>
+                    <img src="{{ url_for('static', filename='images/main_musclepump.jpg') }}" alt="MusclePump" style="width:100%">
+                </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Kickboxing</div>
+                    <img src="{{ url_for('static', filename='images/main_kickboxing.jpg') }}" alt="Boxing" style="width:100%;height: 185px;">
+                </div>
+            </div>
         </div>
-      </div>
 
-      <div class = "selection" id = "right">
-        <h3>Equipment Available:</h3>
-        <div class = "test">
-          &emsp;
-          <input type = "checkbox" name = "equipment" value = "body"> None
-          <br>
-          &emsp;
-          <input type = "checkbox" name = "equipment" value = "dumbbels"> Dumbbells
-          <br>
-          &emsp;
-          <input type = "checkbox" name = "equipment" value = "machine"> Full Gym
-          <br>
-          &emsp;
-          <input type = "checkbox" name = "equipment" value = "cable"> Cable
+        <div class="w3-row-padding">
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Leg Day</div>
+                    <img src="/w3images/house2.jpg" alt="House" style="width:99%">
+                </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Biceps/Triceps</div>
+                    <img src="/w3images/house5.jpg" alt="House" style="width:99%">
+                </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Ab Burn</div>
+                    <img src="/w3images/house4.jpg" alt="House" style="width:99%">
+                </div>
+            </div>
+            <div class="w3-col l3 m6 w3-margin-bottom">
+                <div class="w3-display-container">
+                    <div class="w3-display-topleft w3-black w3-padding">Chest</div>
+                    <img src="/w3images/house3.jpg" alt="House" style="width:99%">
+                </div>
+            </div>
         </div>
-      </div>
-      <div class = "selection" id = "center">
-        <h3>Area(s) of focus:</h3>
-        <div class="test">
-          &emsp;
-          <input type = "checkbox" name = "area" value = "upper">
-          Upper Body
-          <br>
 
-          &emsp;
-          <input type = "checkbox" name = "area" value = "lower"> Lower Body
-          <br>
+        <!-- CustomFit Section -->
+        <div class="w3-container w3-padding-32" id="customfit">
+            <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Find a CustomFit</h3>
+            <form action="" method="POST" id = "form">
+                <div class =  "container">
+                    <div class = "selection" id = "left">
+                        <h3>Type of challenge: </h3>
+                        <div class = "test">
+                            &emsp;
+                            <input type = "checkbox" name = "challenge" value = "circuit"> Workout Circuit
+                            <br>
+                            &emsp;
+                            <input type = "checkbox" name = "challenge" value = "class"> Fitness Class
+                        </div>
+                    </div>
 
-          &emsp;
-          <input type = "checkbox" name = "area" value = "abdominals"> Abdominals
-          <br>
+                    <div class = "selection" id = "right">
+                        <h3>Equipment Available:</h3>
+                        <div class = "test">
+                            &emsp;
+                            <input type = "checkbox" name = "equipment" value = "body"> None
+                            <br>
+                            &emsp;
+                            <input type = "checkbox" name = "equipment" value = "dumbbels"> Dumbbells
+                            <br>
+                            &emsp;
+                            <input type = "checkbox" name = "equipment" value = "machine"> Full Gym
+                            <br>
+                            &emsp;
+                            <input type = "checkbox" name = "equipment" value = "cable"> Cable
+                        </div>
+                    </div>
+                    <div class = "selection" id = "center">
+                        <h3>Area(s) of focus:</h3>
+                        <div class="test">
+                            &emsp;
+                            <input type = "checkbox" name = "area" value = "upper">
+                            Upper Body
+                            <br>
 
-          &emsp;
-          <input type = "checkbox" name = "area" value = "cardio"> Cardio
+                            &emsp;
+                            <input type = "checkbox" name = "area" value = "lower"> Lower Body
+                            <br>
+
+                            &emsp;
+                            <input type = "checkbox" name = "area" value = "abdominals"> Abdominals
+                            <br>
+
+                            &emsp;
+                            <input type = "checkbox" name = "area" value = "cardio"> Cardio
+                        </div>
+                    </div>
+                    <div class = "bottom">
+                        <input type = "submit" value = "Submit" class = "submit" >
+                    </div>
+                </div>
+            </form>
         </div>
-      </div>
-      <div class = "bottom">
-        <input type = "submit" value = "Submit" class = "submit" >
-      </div>
     </div>
-  </form>
-  </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-black w3-padding-16">
+        <p>Made by Hemanth, Shamikh, Priya, and Anthony</p>
+    </footer>
 
 
-  <!-- Contact Section -->
-  <!-- <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
-    <p>Lets get in touch and talk about your next project.</p>
-    <form action="/action_page.php" target="_blank">
-      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
-      <button class="w3-button w3-black w3-section" type="submit">
-        <i class="fa fa-paper-plane"></i> SEND MESSAGE
-      </button>
-    </form>
-  </div> -->
-
-<!-- Image of location/map -->
-<!-- <div class="w3-container">
-  <img src="/w3images/map.jpg" class="w3-image" style="width:100%">
-</div> -->
-
-<!-- End page content -->
-</div>
-
-
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16">
-  <p>Made by Hemanth, Shamikh, Priya, and Anthony</p>
-</footer>
-
-</body>
-</html>
+    {% endblock %}
