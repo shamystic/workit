@@ -58,9 +58,9 @@
     
         
     <div class = "exercise-container" style= " border: 2px solid black;">
-        {% for trifecta in body_parts| batch(3, '&nbsp;')%}
+        {% for triple in exercises| batch(3, '&nbsp;')%}
         <div class = "three-body-parts" style = "display: inline-block;  width: 100%; border-right: 2px solid black;">
-            {% for item in trifecta %}
+            {% for item in triple %}
             <div class = "body-part">
             <h2>{{item.body_part}}</h2>
                 <div class = "container">
