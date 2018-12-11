@@ -45,7 +45,10 @@
 		{% for exercise in exercises %}
 		{% if exercise.workout_id == item.workout_id %}
 		<div class="panel-footer">
-			<a href="/exercise/{{exercise.exercise_id}}">
+			{% set list1 = exercise.exercise_id.split(' ') %}
+
+			{% set my_string = list1|join("-") %}
+			<a href="https://www.bodybuilding.com/exercises/{{my_string}}" target= "_blank">
 				{{exercise.exercise_id}}
 			</a>
 		</div>
@@ -68,7 +71,10 @@
 		{% for exercise in exercises %}
 		{% if exercise.workout_id == item.workout_id %}
 		<div class="panel-footer ">
-			<a href="/exercise/{{exercise.exercise_id}}">
+			{% set list1 = exercise.exercise_id.split(' ') %}
+
+			{% set my_string = list1|join("-") %}
+			<a href="https://www.bodybuilding.com/exercises/{{my_string}}" target= "_blank">
 				{{exercise.exercise_id}}
 			</a>
 		</div>
