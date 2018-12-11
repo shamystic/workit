@@ -1,7 +1,5 @@
 from flask import Flask, request, render_template, url_for, session, redirect, jsonify, flash, Response, current_app
 from flask_sqlalchemy import SQLAlchemy
-from add_equipment import equipment
-from get_workouts import workouts
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 
 # do current_user to get logged in user
