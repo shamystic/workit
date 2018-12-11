@@ -1,18 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 {% extends "header.html" %}
-
-{% block head %}
-<title>My Workouts</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-{% endblock %}
-
 {% block content %}
+<head>
+	<title>My Workouts</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<!-- Navbar (sit on top) -->
+	<div class="w3-top">
+	  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+	    <a href="#home" class="w3-bar-item w3-button"><b>CampusFitness</b></a>
+	    <!-- Float links to the right. Hide them on small screens -->
+	    <div class="w3-right w3-hide-small">
+	      <a href="#workouts" class="w3-bar-item w3-button">Workouts</a>
+	      <a href="#customfit" class="w3-bar-item w3-button">CustomFit</a>
+	      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+	    </div>
+	  </div>
+	</div>
+
 
   <div class="w3-container w3-padding-32" id="myworkouts">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Saved Workouts</h3>
   </div>
     {% for item in workouts %}
+    	{% if item.favorite == false %}
+
         <div class="col-md-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">{{item.workout_id}}</div>
@@ -27,7 +45,45 @@
                 {% endfor %}
             </div>
         </div>
+    	{% endif %}
     {% endfor %}
+
+   <div class="w3-container w3-padding-32" id="faveworkouts">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorite Workouts</h3>
+  </div>
+     {% for item in workouts %}
+     	{% if item.favorite == true %}
+
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">{{item.workout_id}}</div>
+                {% for exercise in exercises %}
+                    {% if exercise.workout_id == item.workout_id %}
+                    <div class="panel-footer">
+                        <a href="/exercise/{{exercise.exercise_id}}">
+                            {{exercise.exercise_id}}
+                        </a>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    <div class="w3-container w3-padding-32" id="faveworkouts">
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorite Classes</h3>
+    </div>
+	{% for item in favClasses %}
+		<div class="col-md-4">
+		<div class="panel panel-primary">
+			<div class="panel-heading">{{item.class_name}}</div>
+			<div class="panel-footer">
+				{{item.class_name}}
+			</div>
+		</div>
+	</div>
+	{% endfor %}
 
 </body>
 {% endblock %}
+</html>

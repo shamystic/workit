@@ -1,11 +1,12 @@
 .contain{
-  border: 1px solid #00009c;
+  border: 6px solid #3A266D;
   width: 30%;
   margin: 0 auto;
   text-align: center;
   font-size: 1.2rem;
-  border-radius: 0.3rem;
-  font-family: Oswald;
+  border-radius: 5px;
+  border-style: groove;
+  font-family: Montserrat;
   font-size: 1.7rem;
 }
 #sign{

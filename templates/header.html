@@ -19,7 +19,11 @@
             <a href="/exercises" class="w3-bar-item w3-button">Exercises</a>
             <a href="/users" class="w3-bar-item w3-button">Users</a>
             <a href="/classes" class="w3-bar-item w3-button">Classes</a>
-            <a href="/login" class="w3-bar-item w3-button">Login</a>
+            {% if current_user.is_authenticated %}
+                <a href="/logout" class="w3-bar-item w3-button">Logout</a>
+            {% else %}
+                <a href="/login" class="w3-bar-item w3-button">Login</a>
+            {% endif %}
         </div>
     </div>
 </div>

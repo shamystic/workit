@@ -21,10 +21,19 @@ login_manager.login_view = 'login'
 def load_user(user_id):
     return Person.query.get(user_id)
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     print(current_user)
-    return render_template('mainTemplate.html')
+    if request.method == 'GET':
+        return render_template('mainTemplate.html')
+    challenge = request.form['challenge']
+    focus = request.form['focus']
+    if (challenge == 'workout'):
+        workouts = Workout.query.filter_by(workout_type = focus)
+        return render_template('workouts.html', workouts = workouts)
+    elif (challenge == 'class'):
+        classes = FitnessClass.query.filter_by(goal = focus)
+        return render_template('classes.html', classes = classes)
 
 @app.route('/equipment', methods = ['GET'])
 def show_equipment():
@@ -59,8 +68,12 @@ def create_workout():
     own = ownsWorkout(email = current_user.email, workout_id = workout_name, favorite = False)
     db.session.add(own)
     db.session.commit()
+<<<<<<< HEAD
     print("REQUEST", request.form)
+=======
+>>>>>>> 40c0f3ca159a02e2994ad5e432a0917f81bb55ff
     for item in request.form.getlist('workout'):
+        print(item)
         temp = hasExercise(workout_id = workout_name, exercise_id = item)
         db.session.add(temp)
         db.session.commit()
@@ -73,11 +86,20 @@ def add_favorite(workout_name):
     db.session.commit()
     return redirect(url_for('show_users'))
 
+@app.route('/add-class/<string:class_name>', methods = ['GET', 'POST'])
+def add_class(class_name):
+    temp = hasFavoriteClass(email = current_user.email, class_name = class_name)
+    db.session.add(temp)
+    db.session.commit()
+    return redirect(url_for('saved_workouts'))
+
 @app.route('/saved-workouts', methods = ['GET'])
 def saved_workouts():
     workouts = ownsWorkout.query.filter_by(email = current_user.email).all()
     exercises = hasExercise.query.all()
-    return render_template('saved-workouts.html', workouts = workouts, exercises = exercises)
+    allClasses = FitnessClass.query.all()
+    favClasses = hasFavoriteClass.query.filter_by(email = current_user.email).all()
+    return render_template('saved-workouts.html', workouts = workouts, exercises = exercises, favClasses = favClasses, classes = allClasses)
 
 @app.route('/users', methods = ['GET'])
 def show_users():

@@ -8,13 +8,13 @@ function buttonpush(butid, butval){
   div.style.visibility = "visible";
   var disclaimer = document.getElementById("disc");
   disclaimer.style.visibility = "visible";
-  
-var newbutval = butval.replace(/\s/g,''); 
+
+var newbutval = butval.replace(/\s/g,'');
   //alert(newbutval);
   var newbutid = butid +"-text" +newbutval;
   if (!divSet.has(newbutid)){
     divSet.add(newbutid);
-   
+
     var newbut = document.createElement("BUTTON");
     newbut.innerHTML = butval;
     newbut.id = newbutid;
@@ -22,15 +22,15 @@ var newbutval = butval.replace(/\s/g,'');
     newbut.className = 'remove';
     var x = document.createElement("INPUT");
    x.className = 'hide';
-    
+
  x.type = "checkbox";
-    x.value= butval; 
+    x.value= butval;
     x.name = "workout";
     x.id = newbutid +"-check";
     x.checked = true;
-    
+
     document.getElementById("form").appendChild(x);
-    
+
 document.getElementById(newbutid).addEventListener("click", function(){
     removebuttons(newbutid, butid +"-text");
 });
@@ -44,7 +44,7 @@ function removebuttons(butid, divid){
   var nobut = document.getElementById(butid);
  nobut.parentNode.removeChild(nobut);
 
- 
+
 var result = div.innerHTML.trim();
 //result == "" ? console.log(true) : console.log(false);
  if (result == ""){
@@ -53,9 +53,9 @@ var result = div.innerHTML.trim();
  }
  // var nocheck = document.getElementById(butid +"-check");
  //  nocheck.parentNode.removeChild(nocheck);
- 
-  
-  
+
+
+
 }
 for (var i=0 ; i < totalbuttons.length ; i++){
   (function(ind){
