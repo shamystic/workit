@@ -31,12 +31,12 @@ class Exercise(db.Model):
     def __repr__(self):
         return "Exercise Name: {}".format(self.name)
 
-class Equipment(db.Model):
-    name = db.Column(db.String(120), primary_key = True)
-    exercises = db.Column(db.String(120), db.ForeignKey(Exercise.name), nullable = False)
-
-    def __repr__(self):
-        return "Equipment Name: {}".format(self.name)
+# class Equipment(db.Model):
+#     name = db.Column(db.String(120), primary_key = True)
+#     exercises = db.Column(db.String(120), db.ForeignKey(Exercise.name), nullable = False)
+#
+#     def __repr__(self):
+#         return "Equipment Name: {}".format(self.name)
 
 class Workout(db.Model):
     workout_id = db.Column(db.String(120), primary_key = True)
@@ -60,8 +60,8 @@ class hasExercise(db.Model):
 class ownsWorkout(db.Model):
     email = db.Column('email', db.String(120), db.ForeignKey(Person.email), primary_key = True)
     workout_id = db.Column('workout_id', db.String(120), db.ForeignKey(Workout.workout_id), primary_key = True)
+    favorite = db.Column(db.Boolean, primary_key = True)
 
 class hasFavoriteClass(db.Model):
     email = db.Column('email', db.String(120), db.ForeignKey(Person.email), primary_key = True)
     class_name = db.Column('class_name', db.String(120), db.ForeignKey(FitnessClass.name), primary_key = True)
-    # class_location = db.Column('class_location', db.String(120), db.ForeignKey(FitnessClass.location), primary_key = True)
