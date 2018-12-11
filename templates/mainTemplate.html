@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/main.css') }}">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -25,7 +25,9 @@
   <img class="w3-image" src="{{ url_for('static', filename='images/main_boxjumps.jpg') }}" alt="Gym" width="1500" height="800">
   <!--<img src="{{ url_for('static', filename='images/main_medballs.jpg') }}" alt="Gym"> -->
   <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><span class="w3-hide-small w3-text-light-grey">Create A Workout</span> </h1>
+      <a href="/create-workout">
+          <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><span class="w3-hide-small w3-text-light-grey">Create a Workout</span> </h1>
+      </a>
   </div>
 </header>
 
@@ -153,7 +155,7 @@
 
 
   <!-- Contact Section -->
-  <div class="w3-container w3-padding-32" id="contact">
+  <!-- <div class="w3-container w3-padding-32" id="contact">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
     <p>Lets get in touch and talk about your next project.</p>
     <form action="/action_page.php" target="_blank">
@@ -165,12 +167,12 @@
         <i class="fa fa-paper-plane"></i> SEND MESSAGE
       </button>
     </form>
-  </div>
-  
+  </div> -->
+
 <!-- Image of location/map -->
-<div class="w3-container">
+<!-- <div class="w3-container">
   <img src="/w3images/map.jpg" class="w3-image" style="width:100%">
-</div>
+</div> -->
 
 <!-- End page content -->
 </div>
@@ -178,7 +180,7 @@
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p>Made by Hemanth, Shamikh, Priya, and Anthony</p>
 </footer>
 
 </body>
