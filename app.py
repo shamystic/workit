@@ -56,7 +56,11 @@ def create_workout():
     workout = Workout(workout_id = workout_name, workout_type = workout_type)
     db.session.add(workout)
     db.session.commit()
+<<<<<<< HEAD
     own = ownsWorkout(email = current_user.email, workout_id = workout_name, favorite = False)
+=======
+    own = ownsWorkout(email = current_user.email, workout_id = workout_name)
+>>>>>>> 9e875b6b747f9ebba9aa739e8615a9d7806b9672
     db.session.add(own)
     db.session.commit()
     for item in request.form.getlist('workout'):
@@ -67,7 +71,11 @@ def create_workout():
 
 @app.route('/add-favorite/<string:workout_name>', methods = ['GET', 'POST'])
 def add_favorite(workout_name):
+<<<<<<< HEAD
     temp = ownsWorkout(email = current_user.email, workout_id = workout_name, favorite = True)
+=======
+    temp = ownsWorkout(email = current_user.email, workout_id = workout_name)
+>>>>>>> 9e875b6b747f9ebba9aa739e8615a9d7806b9672
     db.session.add(temp)
     db.session.commit()
     return redirect(url_for('show_users'))
