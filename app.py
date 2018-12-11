@@ -59,7 +59,12 @@ def show_workouts():
 
 @app.route('/classes', methods = ['GET'])
 def show_classes():
-    return render_template('classes.html', classes = FitnessClass.query.all())
+    classes = FitnessClass.query.all()
+    fav_classes = hasFavoriteClass.query.filter_by(email = current_user.email)
+    fav_class_list = []
+    for item in fav_classes:
+        fav_class_list.append(item.class_name)
+    return render_template('classes.html', classes = classes, fav_classes = fav_class_list)
 
 @app.route('/create-workout', methods = ['GET', 'POST'])
 @login_required
