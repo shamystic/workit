@@ -28,7 +28,7 @@
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Saved Workouts</h3>
   </div>
     {% for item in workouts %}
-    {% if item.favorite == false %}
+    	{% if item.favorite == false %}
 
         <div class="col-md-4">
             <div class="panel panel-primary">
@@ -44,14 +44,14 @@
                 {% endfor %}
             </div>
         </div>
-    {% endif %}
+    	{% endif %}
     {% endfor %}
 
    <div class="w3-container w3-padding-32" id="faveworkouts">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorites</h3>
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorite Workouts</h3>
   </div>
      {% for item in workouts %}
-     {% if item.favorite == true %}
+     	{% if item.favorite == true %}
 
         <div class="col-md-4">
             <div class="panel panel-primary">
@@ -67,8 +67,28 @@
                 {% endfor %}
             </div>
         </div>
-        
-    {% endif %}
+        {% endif %}
+    {% endfor %}  
+    <div class="w3-container w3-padding-32" id="faveworkouts">
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Favorite Classes</h3>
+    </div>
+     {% for myClass in myClasses %}
+  <!--    {% for class in allClasses %} -->
+<!--      {% if myClass.class_name == class.name %} -->
+
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">{{myClass.class_name}}</div>
+                    <div class="panel-footer">
+                        <a href="/exercise/{{exercise.exercise_id}}">
+                            {{myClass.class_name}}
+                        </a>
+                    </div>
+            </div>
+        </div>
+
+<!--     {% endif %}
+    {% endfor %} -->
     {% endfor %}
 	
 </body>
