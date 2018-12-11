@@ -8,13 +8,23 @@
 
 {% block content %}
 <body>
-    <h1> All Workouts</h1>
-    {% for item in workouts|unique %}
-        <div class="col-md-4" >
-            <div class="panel panel-primary" >
+    <h1 style = "text-align: center;"> All Workouts</h1>
+    <div class = "bigdiv" style = "height: 100%; position: relative;background-image: linear-gradient(145deg, #d6e4fc, white); border-radius: 1rem;">
+    {% for triple in workouts|batch(3, '')%}
+    <div class = "workout-container" style = "width: 100%;
+    display: inline-block;">
+
+
+    {% for item in triple %}
+        {% if item.workout_id|length > 0 %}
+        <div  style = "float: left; width: 33%; padding-left: 0.5rem;padding-top: 1rem; display: inline-block; ">
+            <div class="panel panel-primary" style="box-shadow: 2px 4px #9aa8bf;">
                 <div class="panel-heading"><span>{{item.workout_id}} </span> 
+
                     {% if item.workout_id in owned_workouts %}
-                    <span style="float: right; color: white;">Favorite This Workout</span>
+                    <a href="/add-favorite/{{item.workout_id}}">
+                        <span style="float: right; color: gold;">Favorite This Workout</span>
+                    </a>
                     {% endif %}
                 </div>
                 <div class="panel-footer">Workout Type: {{item.workout_type}}</div>
@@ -35,8 +45,12 @@
             </div>
         </div>
         <!-- <a href="/add-favorite/{{item.workout_id}}"><button type="button">Favorite this workout</button></a> -->
-        
+       {% endif %} 
     {% endfor %}
+</div>
+<br>
+{% endfor %}
+</div>
 </body>
 {% endblock %}
 </html>

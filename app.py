@@ -54,7 +54,7 @@ def show_workouts():
         workoutsls.append(item.workout_id)
     print("TYPE",type(owned_workouts))
     print(workoutsls)
-    return render_template('workouts.html', workouts = workouts, exercises = exercises, workoutsls = owned_workouts)
+    return render_template('workouts.html', workouts = workouts, exercises = exercises, owned_workouts = workoutsls)
 
 @app.route('/classes', methods = ['GET'])
 def show_classes():
