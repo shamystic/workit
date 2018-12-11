@@ -75,10 +75,6 @@ def create_workout():
     own = ownsWorkout(email = current_user.email, workout_id = workout_name, favorite = False)
     db.session.add(own)
     db.session.commit()
-# <<<<<<< HEAD
-    print("REQUEST", request.form)
-# =======
-# >>>>>>> 40c0f3ca159a02e2994ad5e432a0917f81bb55ff
     for item in request.form.getlist('workout'):
         print(item)
         temp = hasExercise(workout_id = workout_name, exercise_id = item)
